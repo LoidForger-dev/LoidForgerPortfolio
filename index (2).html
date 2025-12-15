@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maverick | Frontend and Backend Web Developer Portfolio" />
+  <title>Maverick | Portfolio</title>
+
+ <style>
+    /* 1. Global Reset & Original Font */
+    body {
+      /* Reverted to the original font */
+      font-family: "Times New Roman", serif; 
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5; /* Very light, cool background */
+      color: #1a1a1a; /* Deep charcoal for main text */
+      line-height: 1.6;
+    }
+
+    /* 2. Header - Dark, professional background */
+    header {
+      /* A deep, elegant gradient for a premium feel */
+      background: linear-gradient(135deg, #1c2a38, #2a3e52, #39526b);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem 3rem; /* More vertical padding */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3.2rem;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      margin-top: 0.75rem;
+      color: #b0c4de; /* Lighter blue/grey for contrast */
+      font-weight: 300;
+    }
+
+    section {
+      padding: 3rem 1.5rem; /* Increased padding */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 3. Bio Section - Clean and centered */
+    .bio {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #444;
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .bio em {
+        color: #39526b; /* Highlight the quoted text with the primary color */
+        font-style: italic;
+    }
+
+    /* 4. Section Heading - Subtle and modern divider */
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      color: #1c2a38; /* Matches the dark header base color */
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px; /* Thinner line */
+      height: 3px;
+      background: #39526b; /* Primary accent color */
+      margin: 0.75rem auto 0;
+      border-radius: 2px;
+    }
+
+    /* 5. Projects Grid */
+    #projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger min-width */
+      gap: 2.5rem; /* Increased gap */
+    }
+
+    /* 6. Project Card - Elevated and sleek */
+    .card {
+      background: white;
+      border-radius: 12px; /* Softer corners */
+      /* More subtle, modern shadow */
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); 
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px); /* More pronounced lift */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px; /* Slightly taller image */
+      object-fit: cover;
+      border-bottom: none;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.4rem;
+      color: #1c2a38;
+      font-weight: 600;
+    }
+
+    .card-content p {
+      font-size: 1rem;
+      color: #666;
+      min-height: 50px; /* Ensured space for description */
+      margin-bottom: 1rem;
+    }
+
+    /* 7. Card Links - Button styling */
+    .card-links {
+      margin-top: 1rem;
+    }
+
+    .card-links a {
+      text-decoration: none;
+      color: white;
+      background: #39526b; /* Primary accent color */
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px; /* Softer button corners */
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-right: 0.75rem;
+      display: inline-block;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .card-links a:hover {
+      background: #2a3e52; /* Slightly darker on hover */
+      transform: translateY(-1px);
+    }
+    
+    .card-links a:last-child {
+      background: #778da9; /* A secondary, lighter color for "View Code" */
+    }
+    
+    .card-links a:last-child:hover {
+      background: #607996;
+    }
+
+
+    /* 8. Socials */
+    .socials {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      padding: 0 1.5rem;
+    }
+
+    .socials a {
+      color: #39526b;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0 1.2rem;
+      padding: 0.2rem 0.5rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .socials a:hover {
+      color: #1c2a38;
+      border-bottom: 2px solid #39526b;
+    }
+
+    /* 9. Footer - Simple and clean */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #1c2a38;
+      color: #dcdcdc;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    /* 10. Responsive Adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      #projects {
+        gap: 1.5rem;
+      }
+      .card-links a {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+    }
+</style>
+</head>
+<body>
+  <header>
+    <h1>〽️ꪖꪜꫀ𝕣ⅈᥴ𝕜🥷</h1>
+    <p>Frontend and Backend Web Developer</p>
+  </header>
+
+  <section>
+    <p class="bio">
+      A developer who thrives in the gray area between pixel-perfect design and bulletproof logic.
+      I am a full-stack builder with a maverick's spirit, equally at home architecting a scalable API in Node.js
+      as I am crafting an immersive UI in React.<br><br>
+      I believe the best solutions often lie just outside the conventional path.
+      My process is built on a foundation of proven principles, but I'm not afraid to break a few "rules" to achieve
+      a superior user experience, a more elegant codebase, or a system that simply works better.<br><br>
+      I'm driven by a simple question: <em>"What if we did it this way?"</em>
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div id="projects">Loading projects...</div>
+  </section>
+
+  <section class="socials">
+    <a href="https://x.com/IamMaverick_X?t=9EwFs3UnOXDLv3ypafpS_A&s=09" target="_blank">X</a>
+    <a href="https://t.me/IamMaverickX" target="_blank">Telegram</a>
+    <a href="https://github.com/IamMaverickX" target="_blank">GitHub</a>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Maverick. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const username = "IamMaverickX";
+    const container = document.getElementById("projects");
+
+    async function loadRepos() {
+      try {
+        const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+        const repos = await response.json();
+
+        // ✅ Show only repos with a valid homepage URL in "About" section
+        const liveRepos = repos.filter(repo => repo.homepage && repo.homepage.trim() !== "");
+
+        if (liveRepos.length === 0) {
+          container.innerHTML = "<p>No live projects found.</p>";
+          return;
+        }
+
+        container.innerHTML = "";
+
+        for (const repo of liveRepos) {
+          const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(repo.homepage)}&screenshot=true&embed=screenshot.url`;
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+            <img src="${previewUrl}" alt="${repo.name}" onerror="this.src='https://via.placeholder.com/400x200?text=Preview+Not+Available'">
+            <div class="card-content">
+              <h3>${repo.name}</h3>
+              <p>${repo.description || "No description available."}</p>
+              <div class="card-links">
+                <a href="${repo.homepage}" target="_blank">Live Demo</a>
+                <a href="${repo.html_url}" target="_blank">View Code</a>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        }
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = "<p>Failed to load projects.</p>";
+      }
+    }
+
+    loadRepos();
+  </script>
+</body>
+</html>
