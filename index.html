@@ -5,27 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Maverick | Frontend and Backend Web Developer Portfolio" />
   <title>Maverick | Portfolio</title>
-
- <style>
-    /* 1. Global Reset & Original Font */
+  <!-- Google Fonts for Proxima Nova alternative (Montserrat) and Futura alternative (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 1. Global Reset & New Fonts */
     body {
-      /* Reverted to the original font */
-      font-family: "Times New Roman", serif; 
+      font-family: 'Poppins', sans-serif; /* Futura alternative for body */
       margin: 0;
       padding: 0;
-      background: #f0f2f5; /* Very light, cool background */
-      color: #1a1a1a; /* Deep charcoal for main text */
+      background: #0a0a0a; /* Aesthetic black background */
+      color: #f0f0f0; /* Light text for dark background */
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* 2. Header - Dark, professional background */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif; /* Proxima Nova alternative for headings */
+      font-weight: 600;
+    }
+
+    /* 2. Header - Updated for dark theme */
     header {
-      /* A deep, elegant gradient for a premium feel */
-      background: linear-gradient(135deg, #1c2a38, #2a3e52, #39526b);
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a);
       color: white;
       text-align: center;
-      padding: 4rem 1rem 3rem; /* More vertical padding */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 4rem 1rem 3rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+    }
+    
+    /* Animated gradient background for header */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(74, 158, 255, 0.05) 50%, 
+        transparent 100%);
+      animation: shimmer 8s infinite linear;
+      pointer-events: none;
+    }
+    
+    /* Logo styling */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      gap: 1.5rem;
+      opacity: 0;
+      transform: scale(0.9);
+      animation: fadeInScale 1s ease-out 0.8s forwards;
+    }
+    
+    .logo-img {
+      height: 80px;
+      width: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .logo-img:hover {
+      transform: rotate(5deg) scale(1.05);
+      box-shadow: 0 8px 20px rgba(74, 158, 255, 0.3);
+    }
+    
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideInRight 0.8s ease-out 1s forwards;
     }
 
     header h1 {
@@ -33,174 +96,464 @@
       font-size: 3.2rem;
       letter-spacing: 0.5px;
       font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* Animated underline for title */
+    header h1::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -5px;
+      left: 0;
+      background: linear-gradient(90deg, #4a9eff, #7bb4ff);
+      border-radius: 2px;
+      animation: expandWidth 1.5s ease-out 1.5s forwards;
     }
 
     header p {
+      font-family: 'Poppins', sans-serif;
       font-size: 1.25rem;
       margin-top: 0.75rem;
-      color: #b0c4de; /* Lighter blue/grey for contrast */
+      color: #a0a0a0; /* Lighter grey for contrast */
       font-weight: 300;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.8s ease-out 1.3s forwards;
     }
 
     section {
-      padding: 3rem 1.5rem; /* Increased padding */
+      padding: 3rem 1.5rem;
       max-width: 1200px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUpSection 1s ease-out forwards;
+    }
+    
+    /* Staggered animation for sections */
+    section:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    
+    section:nth-child(2) {
+      animation-delay: 0.7s;
+    }
+    
+    section:nth-child(3) {
+      animation-delay: 0.9s;
     }
 
-    /* 3. Bio Section - Clean and centered */
+    /* 3. Bio Section - Updated for dark theme */
     .bio {
+      font-family: 'Poppins', sans-serif;
       font-size: 1.15rem;
       line-height: 1.8;
-      color: #444;
+      color: #d0d0d0;
       text-align: center;
       margin-bottom: 4rem;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-out 1.8s forwards;
     }
     
     .bio em {
-        color: #39526b; /* Highlight the quoted text with the primary color */
+        color: #4a9eff; /* Highlight the quoted text with a blue accent */
         font-style: italic;
+        font-weight: 500;
+        display: inline-block;
+        position: relative;
+    }
+    
+    .bio em::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: linear-gradient(90deg, #4a9eff, transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+    
+    .bio:hover em::after {
+      transform: scaleX(1);
     }
 
-    /* 4. Section Heading - Subtle and modern divider */
+    /* 4. Section Heading - Updated for dark theme */
     h2 {
       text-align: center;
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.2rem;
       margin-bottom: 3rem;
-      color: #1c2a38; /* Matches the dark header base color */
+      color: #ffffff;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out 1.2s forwards;
     }
 
     h2::after {
       content: "";
       display: block;
-      width: 60px; /* Thinner line */
+      width: 60px;
       height: 3px;
-      background: #39526b; /* Primary accent color */
+      background: #4a9eff; /* Blue accent color */
       margin: 0.75rem auto 0;
       border-radius: 2px;
+      transform: scaleX(0);
+      transform-origin: center;
+      animation: expandWidthCenter 0.8s ease-out 1.8s forwards;
     }
 
     /* 5. Projects Grid */
     #projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger min-width */
-      gap: 2.5rem; /* Increased gap */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
     }
 
-    /* 6. Project Card - Elevated and sleek */
+    /* 6. Project Card - Updated for dark theme with animations */
     .card {
-      background: white;
-      border-radius: 12px; /* Softer corners */
-      /* More subtle, modern shadow */
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); 
+      background: #1a1a1a; /* Dark card background */
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
       overflow: hidden;
-      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 1px solid #333;
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      animation: cardAppear 0.8s ease-out forwards;
     }
+    
+    /* Staggered card animations */
+    .card:nth-child(1) { animation-delay: 0.6s; }
+    .card:nth-child(2) { animation-delay: 0.8s; }
+    .card:nth-child(3) { animation-delay: 1.0s; }
+    .card:nth-child(4) { animation-delay: 1.2s; }
+    .card:nth-child(5) { animation-delay: 1.4s; }
+    .card:nth-child(6) { animation-delay: 1.6s; }
 
     .card:hover {
-      transform: translateY(-8px); /* More pronounced lift */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(74, 158, 255, 0.2);
+      border-color: #4a9eff;
     }
 
     .card img {
       width: 100%;
-      height: 200px; /* Slightly taller image */
+      height: 200px;
       object-fit: cover;
       border-bottom: none;
+      transition: transform 0.7s ease;
+      filter: brightness(0.9);
+    }
+    
+    .card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1);
     }
 
     .card-content {
       padding: 1.5rem;
+      position: relative;
+    }
+    
+    /* Subtle hover effect for card content */
+    .card-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4a9eff, transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+    
+    .card:hover .card-content::before {
+      transform: scaleX(1);
     }
 
     .card-content h3 {
       margin: 0 0 0.5rem 0;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.4rem;
-      color: #1c2a38;
+      color: #ffffff;
       font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .card:hover .card-content h3 {
+      color: #4a9eff;
     }
 
     .card-content p {
+      font-family: 'Poppins', sans-serif;
       font-size: 1rem;
-      color: #666;
-      min-height: 50px; /* Ensured space for description */
+      color: #b0b0b0;
+      min-height: 50px;
       margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .card:hover .card-content p {
+      color: #d0d0d0;
     }
 
-    /* 7. Card Links - Button styling */
+    /* 7. Card Links - Updated button styling with animations */
     .card-links {
       margin-top: 1rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .card:hover .card-links {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.2s;
     }
 
     .card-links a {
       text-decoration: none;
       color: white;
-      background: #39526b; /* Primary accent color */
+      background: #4a9eff; /* Blue accent color */
       padding: 0.6rem 1.2rem;
-      border-radius: 8px; /* Softer button corners */
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
       font-size: 0.95rem;
       font-weight: 500;
       margin-right: 0.75rem;
       display: inline-block;
-      transition: background 0.2s, transform 0.1s;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-links a::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+    
+    .card-links a:focus::after,
+    .card-links a:hover::after {
+      animation: ripple 1s ease-out;
     }
 
     .card-links a:hover {
-      background: #2a3e52; /* Slightly darker on hover */
-      transform: translateY(-1px);
+      background: #3a8eff; /* Slightly darker blue on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(58, 142, 255, 0.4);
     }
     
     .card-links a:last-child {
-      background: #778da9; /* A secondary, lighter color for "View Code" */
+      background: #666; /* Grey for "View Code" */
     }
     
     .card-links a:last-child:hover {
-      background: #607996;
+      background: #555;
+      box-shadow: 0 5px 15px rgba(85, 85, 85, 0.4);
     }
 
-
-    /* 8. Socials */
+    /* 8. Socials - Updated for dark theme with animations */
     .socials {
       text-align: center;
       margin-top: 4rem;
       margin-bottom: 2rem;
       padding: 0 1.5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 2s forwards;
     }
 
     .socials a {
-      color: #39526b;
+      color: #4a9eff;
       text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.1rem;
       font-weight: 500;
       margin: 0 1.2rem;
       padding: 0.2rem 0.5rem;
       border-bottom: 2px solid transparent;
-      transition: color 0.3s, border-bottom 0.3s;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: inline-block;
+      position: relative;
+    }
+    
+    .socials a::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #4a9eff;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+    
+    .socials a:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
     }
 
     .socials a:hover {
-      color: #1c2a38;
-      border-bottom: 2px solid #39526b;
+      color: #ffffff;
+      transform: translateY(-3px);
     }
 
-    /* 9. Footer - Simple and clean */
+    /* 9. Footer - Updated for dark theme with animation */
     footer {
       text-align: center;
       padding: 1.5rem;
-      background: #1c2a38;
-      color: #dcdcdc;
+      background: #0a0a0a;
+      color: #a0a0a0;
+      font-family: 'Poppins', sans-serif;
       font-size: 0.9rem;
       margin-top: 3rem;
+      border-top: 1px solid #333;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 2.2s forwards;
+    }
+    
+    /* Floating particles animation */
+    .floating-particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: rgba(74, 158, 255, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
     }
 
-    /* 10. Responsive Adjustments */
+    /* 10. Animation Keyframes */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUpSection {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes expandWidth {
+      to {
+        width: 100%;
+      }
+    }
+    
+    @keyframes expandWidthCenter {
+      to {
+        transform: scaleX(1);
+      }
+    }
+    
+    @keyframes cardAppear {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(40, 40);
+        opacity: 0;
+      }
+    }
+    
+    /* Subtle floating animation */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* 11. Responsive Adjustments */
     @media (max-width: 768px) {
+      .logo-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .logo-img {
+        height: 70px;
+      }
+      
+      .logo-text {
+        align-items: center;
+        text-align: center;
+      }
+      
       header h1 {
         font-size: 2.5rem;
       }
@@ -223,12 +576,43 @@
         text-align: center;
       }
     }
+    
+    /* Fallback image styling if logo is missing */
+    .logo-fallback {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #4a9eff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      animation: float 5s ease-in-out infinite;
+    }
+    
+    /* Scroll progress indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #4a9eff, #7bb4ff);
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
 </style>
 </head>
 <body>
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress"></div>
+  
   <header>
-    <h1>〽️ꪖꪜꫀ𝕣ⅈᥴ𝕜🥷</h1>
-    <p>Frontend and Backend Web Developer</p>
+    <div class="logo-container">
+      <!-- Logo image - replace with your actual maverick.png -->
+      <img src="https://via.placeholder.com/80x80/4a9eff/000000?text=M" alt="Maverick Logo" class="logo-img floating" id="logo-image">
+      <div class="logo-text">
+        <h1>〽️ꪖꪜꫀ𝕣ⅈᥴ𝕜🥷</h1>
+        <p>Frontend and Backend Web Developer</p>
+      </div>
+    </div>
   </header>
 
   <section>
@@ -261,8 +645,74 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Try to load the maverick.png logo, fallback to placeholder if not found
+    const logoImage = document.getElementById('logo-image');
+    logoImage.onerror = function() {
+      // If the image fails to load, replace with fallback text
+      const logoContainer = document.querySelector('.logo-container');
+      logoContainer.innerHTML = `
+        <div class="logo-fallback">M</div>
+        <div class="logo-text">
+          <h1>〽️ꪖꪜꫀ𝕣ⅈᥴ𝕜🥷</h1>
+          <p>Frontend and Backend Web Developer</p>
+        </div>
+      `;
+    };
+    
+    // Set the actual logo source (replace with your maverick.png path)
+    logoImage.src = "maverick.png";
+
     const username = "IamMaverickX";
     const container = document.getElementById("projects");
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.createElement('div');
+      particlesContainer.style.position = 'fixed';
+      particlesContainer.style.top = '0';
+      particlesContainer.style.left = '0';
+      particlesContainer.style.width = '100%';
+      particlesContainer.style.height = '100%';
+      particlesContainer.style.pointerEvents = 'none';
+      particlesContainer.style.zIndex = '-1';
+      document.body.appendChild(particlesContainer);
+      
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'floating-particle';
+        
+        // Random position
+        const left = Math.random() * 100;
+        const top = Math.random() * 100;
+        
+        // Random size
+        const size = Math.random() * 4 + 1;
+        
+        // Random animation
+        const duration = Math.random() * 20 + 10;
+        const delay = Math.random() * 5;
+        
+        particle.style.left = `${left}%`;
+        particle.style.top = `${top}%`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+        particle.style.opacity = Math.random() * 0.5 + 0.2;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // Scroll progress indicator
+    function setupScrollProgress() {
+      const scrollProgress = document.querySelector('.scroll-progress');
+      
+      window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.width = `${scrolled}%`;
+      });
+    }
 
     async function loadRepos() {
       try {
@@ -284,7 +734,7 @@
           const card = document.createElement("div");
           card.className = "card";
           card.innerHTML = `
-            <img src="${previewUrl}" alt="${repo.name}" onerror="this.src='https://via.placeholder.com/400x200?text=Preview+Not+Available'">
+            <img src="${previewUrl}" alt="${repo.name}" onerror="this.src='https://via.placeholder.com/400x200/333333/ffffff?text=Preview+Not+Available'">
             <div class="card-content">
               <h3>${repo.name}</h3>
               <p>${repo.description || "No description available."}</p>
@@ -296,13 +746,39 @@
           `;
           container.appendChild(card);
         }
+        
+        // Add hover effect to cards after they're loaded
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          card.addEventListener('mouseenter', () => {
+            card.style.zIndex = '10';
+          });
+          
+          card.addEventListener('mouseleave', () => {
+            card.style.zIndex = '1';
+          });
+        });
       } catch (error) {
         console.error(error);
         container.innerHTML = "<p>Failed to load projects.</p>";
       }
     }
 
-    loadRepos();
+    // Initialize everything when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      setupScrollProgress();
+      loadRepos();
+      
+      // Add subtle animation to the header title
+      const headerTitle = document.querySelector('header h1');
+      setInterval(() => {
+        headerTitle.style.transform = 'translateY(-2px)';
+        setTimeout(() => {
+          headerTitle.style.transform = 'translateY(0)';
+        }, 300);
+      }, 5000);
+    });
   </script>
 </body>
 </html>
