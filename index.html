@@ -1,19 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/Person">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Loid Forger | Full-stack developer focused on clean interfaces and reliable systems" />
-  <title>Loid Forger — Frontend, Backend & Web3 Developer</title>
-  <!-- Google Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta name="description" content="Loid Forger | Full-stack developer specializing in frontend, backend, and Web3 development. Creating clean interfaces and reliable systems." />
+  <meta name="keywords" content="full-stack developer, web3 developer, frontend developer, backend developer, JavaScript, React, Node.js, blockchain developer, portfolio" />
+  <meta name="author" content="Loid Forger" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Loid Forger — Frontend, Backend & Web3 Developer" />
+  <meta property="og:description" content="Full-stack developer focused on clean interfaces and reliable systems. Specializing in modern web development and Web3 technologies." />
+  <meta property="og:image" content="https://loidforgerportfolio.netlify.app/loidforger-og.jpg" />
+  <meta property="og:url" content="https://loidforgerportfolio.netlify.app/" />
+  <meta property="og:site_name" content="Loid Forger Portfolio" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Loid Forger — Frontend, Backend & Web3 Developer" />
+  <meta name="twitter:description" content="Full-stack developer creating clean interfaces and reliable systems with modern technologies." />
+  <meta name="twitter:image" content="https://loidforgerportfolio.netlify.app/loidforger-twitter.jpg" />
+  <meta name="twitter:site" content="@LoidForger_X" />
+  <meta name="twitter:creator" content="@LoidForger_X" />
+  
+  <!-- Schema.org markup -->
+  <meta itemprop="name" content="Loid Forger" />
+  <meta itemprop="description" content="Full-stack developer specializing in frontend, backend, and Web3 development" />
+  <meta itemprop="image" content="https://loidforgerportfolio.netlify.app/loidforger-schema.jpg" />
+  
+  <title>Loid Forger — Frontend, Backend & Web3 Developer | Full-Stack Developer Portfolio</title>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://loidforgerportfolio.netlify.app/" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" as="style" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#121212">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Lazy loading CSS -->
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </noscript>
   
   <style>
-    /* 1. Global Reset & New Fonts */
+    /* 1. Global Reset & New Fonts - Optimized */
     :root {
       --bg-soft-black: #121212;
       --bg-dark-charcoal: #1a1a1a;
@@ -24,6 +71,7 @@
       --text-gray: #b0b0b0;
       --card-bg: #1e1e1e;
       --border-color: #2a2a2a;
+      --content-width: min(1200px, 90vw);
     }
     
     * {
@@ -32,23 +80,27 @@
       box-sizing: border-box;
     }
     
+    /* Optimize font loading */
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--bg-soft-black);
       color: var(--text-gray);
       line-height: 1.6;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      text-rendering: optimizeSpeed;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-weight: 600;
       color: var(--text-off-white);
       letter-spacing: 0.5px;
     }
 
-    /* 2. Header */
+    /* 2. Header - Optimized */
     header {
       background: var(--bg-dark-charcoal);
       color: white;
@@ -107,6 +159,17 @@
       border-radius: 50%;
       object-fit: cover;
       z-index: 2;
+      aspect-ratio: 1/1;
+    }
+    
+    /* Lazy loading for images */
+    img[data-src] {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    img.loaded {
+      opacity: 1;
     }
     
     .logo-text {
@@ -120,7 +183,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.8rem;
+      font-size: clamp(2rem, 5vw, 2.8rem);
       letter-spacing: 1px;
       font-weight: 700;
       color: var(--text-off-white);
@@ -135,18 +198,18 @@
     }
 
     header p {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.2rem;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1rem, 3vw, 1.2rem);
       color: var(--text-gray);
       font-weight: 300;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    /* 3. Section Styling */
+    /* 3. Section Styling - Optimized */
     section {
-      padding: 3rem 1.5rem;
-      max-width: 1200px;
+      padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 1.5rem);
+      max-width: var(--content-width);
       margin: 0 auto;
       opacity: 0;
       transform: translateY(40px);
@@ -170,10 +233,10 @@
       animation-delay: 1.1s;
     }
 
-    /* 4. About Section */
+    /* 4. About Section - SEO Optimized */
     .about-content {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1.15rem;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
       line-height: 1.8;
       color: var(--text-gray);
       max-width: 800px;
@@ -193,12 +256,12 @@
       display: inline-block;
     }
 
-    /* 5. Section Heading */
+    /* 5. Section Heading - SEO Optimized */
     h2 {
       text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.2rem;
-      margin-bottom: 3rem;
+      font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      margin-bottom: clamp(1.5rem, 4vw, 3rem);
       color: var(--text-off-white);
       font-weight: 600;
       position: relative;
@@ -221,24 +284,25 @@
       animation: expandWidthCenter 0.8s ease-out 1.8s forwards;
     }
 
-    /* 6. Skills Section */
+    /* 6. Skills Section - Optimized */
     .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      margin-top: clamp(1rem, 3vw, 2rem);
     }
     
     .skill-category {
       background: var(--card-bg);
       border-radius: 12px;
-      padding: 1.8rem;
+      padding: clamp(1rem, 3vw, 1.8rem);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       border: 1px solid var(--border-color);
       transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s ease-out forwards;
+      will-change: transform;
     }
     
     /* Staggered skill category animations */
@@ -254,9 +318,9 @@
     }
     
     .skill-category h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 1.2rem;
+      font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
       color: var(--primary-soft-cyan);
       display: flex;
       align-items: center;
@@ -277,7 +341,7 @@
       padding-left: 1.5rem;
       position: relative;
       transition: transform 0.3s ease;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     
     .skill-list li:hover {
@@ -305,10 +369,10 @@
       color: var(--primary-soft-cyan);
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       border: 1px solid rgba(0, 168, 255, 0.2);
       transition: all 0.3s ease;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     
     .skill-tag:hover {
@@ -316,14 +380,14 @@
       transform: translateY(-2px);
     }
 
-    /* 7. Projects Grid */
+    /* 7. Projects Grid - Optimized */
     #projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: clamp(1.5rem, 3vw, 2.5rem);
     }
 
-    /* 8. Project Card */
+    /* 8. Project Card - SEO Optimized */
     .card {
       background: var(--card-bg);
       border-radius: 12px;
@@ -334,6 +398,7 @@
       opacity: 0;
       transform: translateY(30px) scale(0.95);
       animation: cardAppear 0.8s ease-out forwards;
+      will-change: transform;
     }
     
     /* Staggered card animations */
@@ -343,6 +408,10 @@
     .card:nth-child(4) { animation-delay: 1.2s; }
     .card:nth-child(5) { animation-delay: 1.4s; }
     .card:nth-child(6) { animation-delay: 1.6s; }
+    .card:nth-child(7) { animation-delay: 1.8s; }
+    .card:nth-child(8) { animation-delay: 2.0s; }
+    .card:nth-child(9) { animation-delay: 2.2s; }
+    .card:nth-child(10) { animation-delay: 2.4s; }
 
     .card:hover {
       transform: translateY(-12px) scale(1.02);
@@ -357,6 +426,7 @@
       border-bottom: none;
       transition: transform 0.7s ease;
       filter: brightness(0.9);
+      aspect-ratio: 16/9;
     }
     
     .card:hover img {
@@ -365,7 +435,7 @@
     }
 
     .card-content {
-      padding: 1.5rem;
+      padding: clamp(1rem, 2vw, 1.5rem);
       position: relative;
     }
     
@@ -388,8 +458,8 @@
 
     .card-content h3 {
       margin: 0 0 0.5rem 0;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.4rem;
+      font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       color: var(--text-off-white);
       font-weight: 600;
       transition: color 0.3s ease;
@@ -401,8 +471,8 @@
     }
 
     .card-content p {
-      font-family: 'Roboto', sans-serif;
-      font-size: 1rem;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(0.9rem, 2vw, 1rem);
       color: var(--text-gray);
       min-height: 50px;
       margin-bottom: 1rem;
@@ -413,7 +483,7 @@
       color: var(--text-off-white);
     }
 
-    /* 9. Card Links */
+    /* 9. Card Links - SEO Optimized */
     .card-links {
       margin-top: 1rem;
       opacity: 0;
@@ -431,10 +501,10 @@
       text-decoration: none;
       color: white;
       background: var(--primary-electric-blue);
-      padding: 0.6rem 1.2rem;
+      padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(1rem, 2vw, 1.2rem);
       border-radius: 8px;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 0.95rem;
+      font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(0.85rem, 1.5vw, 0.95rem);
       font-weight: 500;
       margin-right: 0.75rem;
       display: inline-block;
@@ -478,20 +548,20 @@
       box-shadow: 0 5px 15px rgba(155, 89, 182, 0.3);
     }
 
-    /* 10. Socials with white logos */
+    /* 10. Socials - SEO Optimized */
     .socials {
       text-align: center;
-      margin-top: 4rem;
-      margin-bottom: 2rem;
-      padding: 0 1.5rem;
+      margin-top: clamp(2rem, 5vw, 4rem);
+      margin-bottom: clamp(1rem, 3vw, 2rem);
+      padding: 0 clamp(1rem, 3vw, 1.5rem);
       opacity: 0;
       animation: fadeIn 1s ease-out 2s forwards;
     }
     
     .socials h3 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
+      font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
       color: var(--text-off-white);
       letter-spacing: 0.5px;
     }
@@ -500,28 +570,28 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: clamp(1rem, 3vw, 2rem);
     }
     
     .social-icon {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      width: 60px;
-      height: 60px;
+      width: clamp(50px, 8vw, 60px);
+      height: clamp(50px, 8vw, 60px);
       border-radius: 50%;
       background: var(--card-bg);
       color: white;
-      font-size: 1.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       text-decoration: none;
       transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       border: 1px solid var(--border-color);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      will-change: transform;
     }
     
-    /* Fix for X/Twitter icon - using proper Font Awesome class */
     .social-icon.x i {
-      font-size: 1.4rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     }
     
     .social-icon:hover {
@@ -548,21 +618,21 @@
       border-color: #333333;
     }
 
-    /* 11. Footer */
+    /* 11. Footer - SEO Optimized */
     footer {
       text-align: center;
       padding: 1.5rem;
       background: var(--bg-dark-charcoal);
       color: var(--text-gray);
-      font-family: 'Roboto', sans-serif;
-      font-size: 0.9rem;
+      font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       margin-top: 3rem;
       border-top: 1px solid var(--border-color);
       opacity: 0;
       animation: fadeIn 1s ease-out 2.2s forwards;
     }
     
-    /* 12. Animation Keyframes */
+    /* 12. Animation Keyframes - Optimized */
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -631,58 +701,70 @@
       }
     }
 
-    /* 13. Responsive Adjustments */
+    /* 13. Performance Optimizations */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* 14. Responsive Adjustments - Optimized */
     @media (max-width: 768px) {
       .logo-circle {
-        width: 100px;
-        height: 100px;
+        width: clamp(80px, 15vw, 100px);
+        height: clamp(80px, 15vw, 100px);
       }
       
       .logo-circle::before {
-        width: 120px;
-        height: 120px;
+        width: clamp(100px, 18vw, 120px);
+        height: clamp(100px, 18vw, 120px);
+      }
+      
+      header {
+        padding: clamp(2rem, 6vw, 4rem) 1rem clamp(1.5rem, 4vw, 3rem);
       }
       
       header h1 {
-        font-size: 2.2rem;
-        letter-spacing: 0.5px;
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
       }
+      
       header p {
-        font-size: 1.1rem;
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       }
-      section {
-        padding: 2rem 1rem;
-      }
-      h2 {
-        font-size: 1.8rem;
-        letter-spacing: 0.5px;
-      }
-      #projects, .skills-container {
-        gap: 1.5rem;
-      }
+      
       .card-links a {
         display: block;
         margin-right: 0;
         margin-bottom: 0.5rem;
         text-align: center;
+        width: 100%;
       }
+      
       .social-icons {
-        gap: 1.5rem;
+        gap: clamp(1rem, 4vw, 1.5rem);
       }
-      .social-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
+    }
+    
+    @media (max-width: 480px) {
+      .skills-container,
+      #projects {
+        grid-template-columns: 1fr;
       }
-      .social-icon.x i {
-        font-size: 1.2rem;
+      
+      .social-icons {
+        justify-content: space-around;
       }
     }
     
     /* Fallback if logo image is missing */
     .logo-fallback {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
+      font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       font-weight: 700;
       color: white;
       z-index: 2;
@@ -700,174 +782,470 @@
       z-index: 1000;
       transition: width 0.1s ease;
     }
-</style>
+    
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      
+      header, section, footer {
+        background: white;
+        color: black;
+      }
+      
+      .card, .skill-category {
+        box-shadow: none;
+        border: 1px solid #ddd;
+      }
+      
+      .social-icons, .scroll-progress {
+        display: none;
+      }
+    }
+    
+    /* Accessibility improvements */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    :focus-visible {
+      outline: 2px solid var(--primary-electric-blue);
+      outline-offset: 2px;
+    }
+    
+    /* Optimize image loading */
+    .lazy-image {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .lazy-image.loaded {
+      opacity: 1;
+    }
+    
+    /* Loading states */
+    .loading {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    
+    /* No projects message */
+    .no-projects {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-gray);
+      font-style: italic;
+      grid-column: 1 / -1;
+    }
+    
+    /* Project language badge */
+    .language-badge {
+      background: var(--primary-soft-cyan)20;
+      color: var(--primary-soft-cyan);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--primary-soft-cyan)40;
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+    
+    /* Updated date */
+    .updated-date {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    /* Card header */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .card-title {
+      flex: 1;
+      min-width: 0; /* Allow text to wrap */
+    }
+  </style>
 </head>
 <body>
-  <!-- Scroll progress indicator -->
-  <div class="scroll-progress"></div>
+  <!-- Skip to main content for accessibility -->
+  <a href="#about" class="sr-only sr-only-focusable">Skip to main content</a>
   
-  <header>
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+  
+  <header role="banner" itemprop="mainEntity" itemscope itemtype="https://schema.org/Person">
     <div class="logo-container">
       <!-- Circular logo with pulse animation -->
       <div class="logo-circle">
-        <!-- Logo image - replace with your actual loidforger.png -->
-        <img src="https://via.placeholder.com/100x100/00a8ff/ffffff?text=LF" alt="Loid Forger Logo" class="logo-img" id="logo-image">
+        <!-- Logo image with lazy loading -->
+        <img src="loidforger.png" 
+             alt="Loid Forger - Full Stack Developer"
+             class="logo-img lazy-image" 
+             id="logo-image"
+             width="120"
+             height="120"
+             loading="eager"
+             onload="this.classList.add('loaded')">
       </div>
       <div class="logo-text">
-        <h1>Loid Forger <span>— Frontend, Backend & Web3 Developer</span></h1>
-        <p>Full-stack developer focused on clean interfaces and reliable systems</p>
+        <h1 itemprop="name">Loid Forger <span>— Frontend, Backend & Web3 Developer</span></h1>
+        <p itemprop="description">Full-stack developer focused on clean interfaces and reliable systems</p>
+        <meta itemprop="jobTitle" content="Full Stack Developer" />
+        <meta itemprop="knowsAbout" content="Frontend Development, Backend Development, Web3 Development" />
       </div>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <div class="about-content">
-      <p>I'm Loid Forger, a developer who works across frontend, backend, and Web3. I enjoy building products that are not just functional, but clear, usable, and thoughtfully put together.</p>
-      
-      <p>I like working close to both design and logic. From turning ideas into responsive interfaces, to building backend logic and integrating blockchain features, I focus on writing clean code and solving real problems.</p>
+  <main role="main">
+    <section id="about" itemprop="description" itemscope itemtype="https://schema.org/AboutPage">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>I'm <strong>Loid Forger</strong>, a <strong>full-stack developer</strong> specializing in <strong>frontend development</strong>, <strong>backend development</strong>, and <strong>Web3 development</strong>. I enjoy building products that are not just functional, but clear, usable, and thoughtfully put together.</p>
+        
+        <p>I like working close to both design and logic. From turning ideas into responsive interfaces, to building backend logic and integrating blockchain features, I focus on writing clean code and solving real problems.</p>
 
-      <p>I'm naturally curious, I learn fast, and I enjoy collaborating with others. I believe the best products are built when people share ideas openly, challenge each other, and work toward a common goal.</p>
-      
-      <p>I'm always looking to <em>"grow, improve my craft, and build</em> things that actually matter.</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills & Tools</h2>
-    <div class="skills-container">
-      <div class="skill-category">
-        <h3><i class="fas fa-code"></i> Skills</h3>
-        <ul class="skill-list">
-          <li>Frontend Development</li>
-          <li>Backend Development</li>
-          <li>Web3 Development</li>
-          <li>Problem Solving</li>
-          <li>Collaboration</li>
-        </ul>
+        <p>I'm naturally curious, I learn fast, and I enjoy collaborating with others. I believe the best products are built when people share ideas openly, challenge each other, and work toward a common goal.</p>
+        
+        <p>I'm always looking to <em>"grow, improve my craft, and build</em> things that actually matter.</p>
       </div>
-      
-      <div class="skill-category">
-        <h3><i class="fas fa-cogs"></i> Frameworks & Libraries</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Vue.js</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express</span>
-          <span class="skill-tag">Modern JavaScript</span>
+    </section>
+
+    <section id="skills" itemscope itemtype="https://schema.org/ItemList">
+      <h2>Skills & Tools</h2>
+      <div class="skills-container">
+        <div class="skill-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <h3><i class="fas fa-code" aria-hidden="true"></i> <span itemprop="name">Technical Skills</span></h3>
+          <ul class="skill-list">
+            <li itemprop="description">Frontend Development</li>
+            <li itemprop="description">Backend Development</li>
+            <li itemprop="description">Web3 Development</li>
+            <li itemprop="description">Problem Solving</li>
+            <li itemprop="description">Collaboration</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <h3><i class="fas fa-cogs" aria-hidden="true"></i> <span itemprop="name">Frameworks & Libraries</span></h3>
+          <div class="skill-tags">
+            <span class="skill-tag" itemprop="keywords">React</span>
+            <span class="skill-tag" itemprop="keywords">Next.js</span>
+            <span class="skill-tag" itemprop="keywords">Vue.js</span>
+            <span class="skill-tag" itemprop="keywords">Node.js</span>
+            <span class="skill-tag" itemprop="keywords">Express</span>
+            <span class="skill-tag" itemprop="keywords">Modern JavaScript</span>
+          </div>
+        </div>
+        
+        <div class="skill-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <h3><i class="fas fa-tools" aria-hidden="true"></i> <span itemprop="name">Development Tools</span></h3>
+          <ul class="skill-list">
+            <li itemprop="description">Git, GitHub</li>
+            <li itemprop="description">Chrome DevTools</li>
+            <li itemprop="description">VS Code</li>
+            <li itemprop="description">Terminal/CLI</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <h3><i class="fas fa-rocket" aria-hidden="true"></i> <span itemprop="name">Collaboration & Deployment</span></h3>
+          <ul class="skill-list">
+            <li itemprop="description">Discord</li>
+            <li itemprop="description">Netlify</li>
+            <li itemprop="description">Vercel</li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <section id="projects-section" itemscope itemtype="https://schema.org/ItemList">
+      <h2>My Projects</h2>
+      <p class="sr-only">A showcase of my latest development projects including web applications and Web3 projects.</p>
       
-      <div class="skill-category">
-        <h3><i class="fas fa-tools"></i> Development Tools</h3>
-        <ul class="skill-list">
-          <li>Git, GitHub</li>
-          <li>Chrome DevTools</li>
-          <li>VS Code</li>
-          <li>Terminal/CLI</li>
-        </ul>
+      <!-- Projects will be dynamically loaded here -->
+      <div id="projects" aria-live="polite" aria-atomic="true">
+        <p>Loading projects...</p>
       </div>
-      
-      <div class="skill-category">
-        <h3><i class="fas fa-rocket"></i> Collaboration & Deployment</h3>
-        <ul class="skill-list">
-          <li>Discord</li>
-          <li>Netlify</li>
-          <li>Vercel</li>
-        </ul>
+    </section>
+
+    <section class="socials" aria-labelledby="connect-heading">
+      <h3 id="connect-heading">Connect With Me</h3>
+      <div class="social-icons" role="list">
+        <a href="https://x.com/LoidForger_X?t=9EwFs3UnOXDLv3ypafpS_A&s=09" 
+           target="_blank" 
+           rel="noopener noreferrer nofollow"
+           class="social-icon x" 
+           title="Follow me on X (Twitter)"
+           aria-label="Follow me on X (Twitter)"
+           role="listitem">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+          <span class="sr-only">X (Twitter)</span>
+        </a>
+        <a href="https://t.me/Loid_ForgerX" 
+           target="_blank" 
+           rel="noopener noreferrer nofollow"
+           class="social-icon telegram" 
+           title="Message me on Telegram"
+           aria-label="Message me on Telegram"
+           role="listitem">
+          <i class="fab fa-telegram" aria-hidden="true"></i>
+          <span class="sr-only">Telegram</span>
+        </a>
+        <a href="https://github.com/LoidForger-dev" 
+           target="_blank" 
+           rel="noopener noreferrer nofollow"
+           class="social-icon github" 
+           title="View my GitHub profile"
+           aria-label="View my GitHub profile"
+           role="listitem">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span class="sr-only">GitHub</span>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="projects-section">
-    <h2>Projects</h2>
-    <div id="projects">Loading projects...</div>
-  </section>
-
-  <section class="socials">
-    <h3>Connect With Me</h3>
-    <div class="social-icons">
-      <a href="https://x.com/LoidForger_X?t=9EwFs3UnOXDLv3ypafpS_A&s=09" target="_blank" class="social-icon x" title="X (Twitter)">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://t.me/Loid_ForgerX" target="_blank" class="social-icon telegram" title="Telegram">
-        <i class="fab fa-telegram"></i>
-      </a>
-      <a href="https://github.com/LoidForger-dev" target="_blank" class="social-icon github" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Loid Forger. All rights reserved.
+  <footer role="contentinfo">
+    <p>© <span id="year"></span> Loid Forger. All rights reserved.</p>
+    <p>Full-stack developer specializing in modern web technologies and Web3 development.</p>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Try to load the loidforger.png logo, fallback to placeholder if not found
-    const logoImage = document.getElementById('logo-image');
-    logoImage.onerror = function() {
-      // If the image fails to load, replace with fallback
-      const logoCircle = document.querySelector('.logo-circle');
-      logoCircle.innerHTML = '<div class="logo-fallback">LF</div>';
-    };
-    
-    // Set the actual logo source (replace with your loidforger.png path)
-    logoImage.src = "loidforger.png";
-
-    const username = "LoidForger-dev";
-    const container = document.getElementById("projects");
-
-    // Scroll progress indicator
-    function setupScrollProgress() {
-      const scrollProgress = document.querySelector('.scroll-progress');
+    // SEO & Performance Optimized JavaScript - Shows ONLY repos with homepage URLs
+    (function() {
+      'use strict';
       
-      window.addEventListener('scroll', () => {
-        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (window.scrollY / windowHeight) * 100;
-        scrollProgress.style.width = `${scrolled}%`;
-      });
-    }
-
-    async function loadRepos() {
-      try {
-        const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-        const repos = await response.json();
-
-        // Show only repos with a valid homepage URL in "About" section
-        const liveRepos = repos.filter(repo => repo.homepage && repo.homepage.trim() !== "");
-
-        if (liveRepos.length === 0) {
-          container.innerHTML = "<p>No live projects found.</p>";
-          return;
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+      
+      // Image lazy loading
+      const lazyLoadImages = () => {
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.add('loaded');
+              observer.unobserve(img);
+            }
+          });
+        }, {
+          rootMargin: '50px 0px',
+          threshold: 0.1
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+      };
+      
+      // Try to load the logo, fallback to placeholder if not found
+      const logoImage = document.getElementById('logo-image');
+      const handleLogoError = function() {
+        const logoCircle = document.querySelector('.logo-circle');
+        logoCircle.innerHTML = '<div class="logo-fallback" aria-label="Loid Forger Logo">LF</div>';
+      };
+      
+      if (logoImage.complete) {
+        if (logoImage.naturalHeight === 0) {
+          handleLogoError();
         }
-
-        container.innerHTML = "";
-
-        for (const repo of liveRepos) {
-          const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(repo.homepage)}&screenshot=true&embed=screenshot.url`;
-          const card = document.createElement("div");
-          card.className = "card";
-          card.innerHTML = `
-            <img src="${previewUrl}" alt="${repo.name}" onerror="this.src='https://via.placeholder.com/400x200/1e1e1e/ffffff?text=Preview+Not+Available'">
-            <div class="card-content">
-              <h3>${repo.name}</h3>
-              <p>${repo.description || "No description available."}</p>
-              <div class="card-links">
-                <a href="${repo.homepage}" target="_blank">Live Demo</a>
-                <a href="${repo.html_url}" target="_blank">View Code</a>
-              </div>
+      } else {
+        logoImage.onerror = handleLogoError;
+      }
+      
+      // Set the actual logo source
+      logoImage.src = "loidforger.png";
+      logoImage.loading = "eager"; // Make logo load immediately
+      
+      const username = "LoidForger-dev";
+      const container = document.getElementById("projects");
+      
+      // Scroll progress indicator
+      const setupScrollProgress = () => {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        if (!scrollProgress) return;
+        
+        const updateScrollProgress = () => {
+          const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = windowHeight > 0 ? (window.scrollY / windowHeight) * 100 : 0;
+          scrollProgress.style.width = `${scrolled}%`;
+        };
+        
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        updateScrollProgress(); // Initial call
+      };
+      
+      // Load ONLY GitHub projects with homepage URLs
+      async function loadProjectsWithHomepage() {
+        try {
+          // Show loading state
+          container.innerHTML = '<p class="loading-text" aria-live="polite">Loading projects with live demos...</p>';
+          container.classList.add('loading');
+          
+          // Fetch repos from GitHub API
+          const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated&direction=desc`, {
+            headers: {
+              'Accept': 'application/vnd.github.v3+json'
+            }
+          });
+          
+          if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+          }
+          
+          const repos = await response.json();
+          
+          // Filter for repos with valid homepage URLs only
+          const reposWithHomepage = repos.filter(repo => 
+            repo.homepage && 
+            repo.homepage.trim() !== '' &&
+            !repo.archived
+          );
+          
+          // Display only repos with homepage URLs
+          displayProjects(reposWithHomepage);
+          container.classList.remove('loading');
+          
+        } catch (error) {
+          console.error('Error loading projects:', error);
+          container.innerHTML = `
+            <div class="error-message" role="alert">
+              <p>Failed to load projects. Please check your internet connection or try again later.</p>
+              <button onclick="loadProjectsWithHomepage()" style="
+                background: var(--primary-electric-blue);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 1rem;
+                font-family: 'Roboto', sans-serif;
+              ">Retry Loading Projects</button>
             </div>
           `;
-          container.appendChild(card);
+          container.classList.remove('loading');
+        }
+      }
+      
+      function displayProjects(repos) {
+        if (!repos || repos.length === 0) {
+          container.innerHTML = `
+            <p class="no-projects" aria-live="polite">
+              No projects with live demos found. Check back soon for updates!
+              <br><small>Projects need to have a homepage URL set in GitHub to appear here.</small>
+            </p>
+          `;
+          return;
         }
         
-        // Add hover effect to cards after they're loaded
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
+        container.innerHTML = '';
+        
+        // Sort by updated date (newest first)
+        repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+        
+        // Create cards for repos with homepage URLs
+        repos.forEach((repo, index) => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.setAttribute('itemprop', 'itemListElement');
+          card.setAttribute('itemscope', '');
+          card.setAttribute('itemtype', 'https://schema.org/CreativeWork');
+          
+          // Generate preview URL using homepage
+          const previewUrl = `https://api.microlink.io/?url=${encodeURIComponent(repo.homepage)}&screenshot=true&embed=screenshot.url`;
+          
+          // Clean up description
+          let description = repo.description || 'No description available.';
+          if (description.length > 120) {
+            description = description.substring(0, 120) + '...';
+          }
+          
+          // Determine language badge color
+          const languageColors = {
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#2b7489',
+            'Python': '#3572A5',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'Vue': '#41b883',
+            'React': '#61dafb',
+            'Node.js': '#339933'
+          };
+          
+          const languageColor = languageColors[repo.language] || '#00a8ff';
+          
+          card.innerHTML = `
+            <img src="https://via.placeholder.com/400x200/1e1e1e/ffffff?text=Loading..."
+                 data-src="${previewUrl}"
+                 alt="Live demo preview of ${repo.name} project"
+                 class="lazy-image"
+                 width="400"
+                 height="200"
+                 loading="lazy"
+                 onerror="this.src='https://via.placeholder.com/400x200/1e1e1e/ffffff?text=Live+Demo+Preview'"
+                 onload="this.classList.add('loaded')">
+            <div class="card-content">
+              <div class="card-header">
+                <div class="card-title">
+                  <h3 itemprop="name">${escapeHtml(repo.name)}</h3>
+                </div>
+                ${repo.language ? `
+                  <span class="language-badge" style="
+                    background: ${languageColor}20;
+                    color: ${languageColor};
+                    border-color: ${languageColor}40;
+                  ">${repo.language}</span>
+                ` : ''}
+              </div>
+              <div class="updated-date">
+                <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                <span title="Last updated">Updated ${formatDate(repo.updated_at)}</span>
+              </div>
+              <p itemprop="description">${escapeHtml(description)}</p>
+              <div class="card-links">
+                <a href="${repo.homepage}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   itemprop="url"
+                   aria-label="View live demo of ${repo.name}"
+                   title="Live Demo">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                </a>
+                <a href="${repo.html_url}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   itemprop="codeRepository"
+                   aria-label="View source code of ${repo.name}"
+                   title="View Code">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+              </div>
+              <meta itemprop="programmingLanguage" content="${repo.language || 'Various'}" />
+              <meta itemprop="dateModified" content="${repo.updated_at}" />
+              <meta itemprop="dateCreated" content="${repo.created_at}" />
+            </div>
+          `;
+          
+          // Add hover effect
           card.addEventListener('mouseenter', () => {
             card.style.zIndex = '10';
           });
@@ -875,27 +1253,115 @@
           card.addEventListener('mouseleave', () => {
             card.style.zIndex = '1';
           });
+          
+          container.appendChild(card);
         });
-      } catch (error) {
-        console.error(error);
-        container.innerHTML = "<p>Failed to load projects.</p>";
+        
+        // Add animation delays dynamically for all cards
+        const cards = container.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+          card.style.animationDelay = `${0.6 + (index * 0.2)}s`;
+        });
+        
+        // Initialize lazy loading for images
+        lazyLoadImages();
+        
+        // Announce to screen readers
+        const liveRegion = document.createElement('div');
+        liveRegion.setAttribute('aria-live', 'polite');
+        liveRegion.setAttribute('aria-atomic', 'true');
+        liveRegion.className = 'sr-only';
+        liveRegion.textContent = `Loaded ${repos.length} projects with live demos from GitHub`;
+        document.body.appendChild(liveRegion);
+        setTimeout(() => liveRegion.remove(), 3000);
       }
-    }
-
-    // Initialize everything when page loads
-    window.addEventListener('DOMContentLoaded', () => {
-      setupScrollProgress();
-      loadRepos();
       
-      // Add subtle animation to the logo
-      const logoCircle = document.querySelector('.logo-circle');
-      setInterval(() => {
-        logoCircle.style.transform = 'scale(1.03)';
-        setTimeout(() => {
-          logoCircle.style.transform = 'scale(1)';
-        }, 300);
-      }, 4000);
-    });
+      // Helper function to escape HTML
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+      
+      // Helper function to format date
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        const now = new Date();
+        const diffTime = Math.abs(now - date);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        if (diffDays === 0) return 'today';
+        if (diffDays === 1) return 'yesterday';
+        if (diffDays < 7) return `${diffDays} days ago`;
+        if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+        if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+        return `${Math.floor(diffDays / 365)} years ago`;
+      }
+      
+      // Initialize everything when page loads
+      document.addEventListener('DOMContentLoaded', () => {
+        setupScrollProgress();
+        loadProjectsWithHomepage(); // Load ONLY projects with homepage URLs
+        lazyLoadImages();
+        
+        // Add subtle animation to the logo
+        const logoCircle = document.querySelector('.logo-circle');
+        if (logoCircle) {
+          setInterval(() => {
+            logoCircle.style.transform = 'scale(1.03)';
+            setTimeout(() => {
+              logoCircle.style.transform = 'scale(1)';
+            }, 300);
+          }, 4000);
+        }
+        
+        // Auto-refresh projects every 5 minutes to keep updated
+        setInterval(() => {
+          console.log('Auto-refreshing projects...');
+          loadProjectsWithHomepage();
+        }, 5 * 60 * 1000); // 5 minutes
+      });
+      
+      // Make function globally available for manual refresh
+      window.refreshProjects = loadProjectsWithHomepage;
+      
+      // Performance monitoring
+      window.addEventListener('load', () => {
+        // Log performance metrics
+        if ('performance' in window) {
+          setTimeout(() => {
+            const perfData = window.performance.getEntriesByType('navigation')[0];
+            if (perfData) {
+              console.log('Page load time:', perfData.loadEventEnd - perfData.startTime, 'ms');
+            }
+          }, 0);
+        }
+      });
+      
+    })();
+  </script>
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Loid Forger",
+    "url": "https://loidforgerportfolio.netlify.app/",
+    "image": "https://loidforgerportfolio.netlify.app/loidforger.png",
+    "jobTitle": "Full Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "description": "Full-stack developer specializing in frontend, backend, and Web3 development. Creating clean interfaces and reliable systems.",
+    "knowsAbout": ["Frontend Development", "Backend Development", "Web3 Development", "JavaScript", "React", "Node.js", "Blockchain"],
+    "sameAs": [
+      "https://github.com/LoidForger-dev",
+      "https://x.com/LoidForger_X",
+      "https://t.me/Loid_ForgerX"
+    ]
+  }
   </script>
 </body>
 </html>
