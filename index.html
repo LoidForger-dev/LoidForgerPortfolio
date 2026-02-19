@@ -87,6 +87,7 @@
       display: flex; justify-content: center; align-items: center; margin-bottom: 2rem;
       box-shadow: 0 0 50px rgba(0, 168, 255, 0.4);
       animation: pulse 3s infinite ease-in-out, gradientShift 8s infinite alternate;
+      position: relative;
     }
     .logo-circle:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 0 80px rgba(0, 168, 255, 0.7); }
     .logo-circle::before {
@@ -97,7 +98,14 @@
       content: ''; position: absolute; width: 240px; height: 240px; border-radius: 50%;
       border: 1px solid rgba(155, 89, 182, 0.2); animation: pulse-ring 4s infinite;
     }
-    .logo-img { width: 70%; border-radius: 50%; aspect-ratio: 1/1; border: 3px solid rgba(255,255,255,0.2); }
+    .logo-img {
+      width: 70%; border-radius: 50%; aspect-ratio: 1/1; border: 3px solid rgba(255,255,255,0.2);
+      object-fit: cover; z-index: 2;
+    }
+    .logo-fallback {
+      font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 900; color: white;
+      z-index: 2; text-shadow: 0 0 20px rgba(0,168,255,0.5);
+    }
     .logo-text { display: flex; flex-direction: column; align-items: center; animation: fadeInUp 0.8s ease-out 0.8s forwards; }
     header h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 900; color: var(--text-off-white); margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(0,168,255,0.5); }
     header h1 span { color: var(--primary-electric-blue); text-shadow: 0 0 15px rgba(0,210,255,0.7); }
@@ -225,8 +233,8 @@
   <header>
     <div class="logo-container">
       <div class="logo-circle">
-        <img src="data:loidforger.png xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230a0a0a' /%3E%3Ctext x='50' y='68' font-size='48' text-anchor='middle' fill='%2300a8ff' font-family='Orbitron' font-weight='900'%3ELF%3C/text%3E%3C/svg%3E"
-             alt="Loid Forger" class="logo-img" width="180" height="180">
+        <!-- Original logo image: loidforger.png with fallback -->
+        <img src="loidforger.png" alt="Loid Forger - Full Stack Developer" class="logo-img" id="logo-image" width="180" height="180" loading="eager" onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div class=\'logo-fallback\'>LF</div>';">
       </div>
       <div class="logo-text">
         <h1>Loid Forger <span>— Frontend, Backend & Web3 Developer</span></h1>
