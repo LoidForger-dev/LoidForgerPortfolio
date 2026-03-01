@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/Person">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="Loid Forger | Full-stack developer specializing in frontend, backend, and Web3 development. 50+ happy clients, 5-star rated." />
+  <meta name="keywords" content="full-stack developer, web3 developer, frontend developer, backend developer, JavaScript, React, Node.js, blockchain developer, portfolio, testimonials" />
+  <meta name="author" content="Loid Forger" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Loid Forger — Frontend, Backend & Web3 Developer | 50+ Happy Clients" />
+  <meta property="og:description" content="Full-stack developer with 5-star ratings and 50+ successful projects. Specializing in modern web development and Web3 technologies." />
+  <meta property="og:image" content="https://loidforgerportfolio.netlify.app/loidforger-og.jpg" />
+  <meta property="og:url" content="https://loidforgerportfolio.netlify.app/" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Loid Forger — Frontend, Backend & Web3 Developer | 50+ Happy Clients" />
+  <meta name="twitter:description" content="Full-stack developer creating clean interfaces and reliable systems with modern technologies. 5-star rated, 24hr delivery." />
+  <meta name="twitter:image" content="https://loidforgerportfolio.netlify.app/loidforger-twitter.jpg" />
+  
+  <title>Loid Forger — 5-Star Web3 & Full-Stack Developer | 50+ Happy Clients</title>
+  <link rel="canonical" href="https://loidforgerportfolio.netlify.app/" />
+  
+  <!-- Preload & fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" as="style" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300a8ff'>LF</text></svg>">
+  
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    :root {
+      --bg-soft-black: #0a0a0a;
+      --bg-dark-charcoal: #111111;
+      --primary-electric-blue: #00a8ff;
+      --primary-soft-cyan: #00d2ff;
+      --primary-glow: rgba(0, 168, 255, 0.3);
+      --secondary-muted-purple: #9b59b6;
+      --text-off-white: #f5f5f5;
+      --text-gray: #b0b0b0;
+      --card-bg: rgba(20, 20, 20, 0.6);
+      --border-color: #2a2a2a;
+      --content-width: min(1200px, 90vw);
+      --gradient-blue: linear-gradient(135deg, #00a8ff, #00d2ff);
+      --gradient-purple: linear-gradient(135deg, #9b59b6, #8e44ad);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* Background image with low opacity */
+    body {
+      font-family: 'Roboto', system-ui, sans-serif;
+      background: var(--bg-soft-black);
+      color: var(--text-gray);
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      text-rendering: optimizeSpeed;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      opacity: 0.15; /* low opacity */
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    h1, h2, h3, h4, h5, h6 { font-family: 'Orbitron', sans-serif; font-weight: 700; color: var(--text-off-white); letter-spacing: 1px; }
+    header, section, footer { position: relative; z-index: 1; backdrop-filter: blur(8px); }
+    
+    /* header */
+    header {
+      background: rgba(17, 17, 17, 0.7);
+      backdrop-filter: blur(12px);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem 4rem;
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+      border-bottom: 1px solid rgba(0, 168, 255, 0.2);
+      box-shadow: 0 0 30px rgba(0, 168, 255, 0.1);
+    }
+    .logo-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem; }
+    .logo-circle {
+      width: clamp(180px, 30vw, 220px);
+      height: clamp(180px, 30vw, 220px);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-electric-blue), var(--primary-soft-cyan), var(--secondary-muted-purple));
+      background-size: 200% 200%;
+      display: flex; justify-content: center; align-items: center; margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(0, 168, 255, 0.3); /* reduced glow */
+      animation: gradientShift 8s infinite alternate;
+      position: relative;
+    }
+    .logo-circle:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 168, 255, 0.5); }
+    /* removed pulsing rings */
+    .logo-img {
+      width: 70%; border-radius: 50%; aspect-ratio: 1/1; border: 3px solid rgba(255,255,255,0.2);
+      object-fit: cover; z-index: 2;
+    }
+    .logo-fallback {
+      font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 900; color: white;
+      z-index: 2; text-shadow: 0 0 10px rgba(0,168,255,0.5);
+    }
+    .logo-text { display: flex; flex-direction: column; align-items: center; animation: fadeInUp 0.8s ease-out 0.8s forwards; }
+    header h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 900; color: var(--text-off-white); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,168,255,0.3); }
+    header h1 span { color: var(--primary-electric-blue); text-shadow: 0 0 10px rgba(0,210,255,0.5); }
+    header p { font-size: clamp(1rem, 3vw, 1.3rem); color: var(--text-gray); max-width: 600px; margin: 0 auto; }
+    
+    section {
+      padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem);
+      max-width: var(--content-width);
+      margin: 0 auto 2rem;
+      background: rgba(10, 10, 10, 0.5); /* more transparent for glass */
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    h2 { text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 2rem; color: var(--text-off-white); letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,168,255,0.2); }
+    h2::after {
+      content: ""; display: block; width: 80px; height: 4px;
+      background: linear-gradient(90deg, var(--primary-electric-blue), var(--primary-soft-cyan), var(--secondary-muted-purple));
+      margin: 0.75rem auto 0; border-radius: 2px;
+    }
+    
+    /* skills */
+    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .skill-category {
+      background: rgba(30, 30, 30, 0.5); backdrop-filter: blur(10px);
+      border-radius: 16px; padding: 1.5rem;
+      border: 1px solid var(--border-color); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .skill-category:hover { transform: translateY(-5px); border-color: var(--primary-electric-blue); box-shadow: 0 0 20px rgba(0,168,255,0.2); }
+    .skill-category h3 { font-size: 1.4rem; color: var(--primary-soft-cyan); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+    .skill-list { list-style: none; }
+    .skill-list li { margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
+    .skill-list li::before { content: '▸'; left: 0; color: var(--primary-electric-blue); position: absolute; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .skill-tag { background: rgba(0,168,255,0.15); color: var(--primary-soft-cyan); padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; border: 1px solid rgba(0,168,255,0.3); backdrop-filter: blur(5px); }
+    
+    /* projects grid */
+    #projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 2rem; }
+    .card {
+      background: rgba(30, 30, 30, 0.6); backdrop-filter: blur(10px);
+      border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border-color); transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-8px); border-color: var(--primary-electric-blue); box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,168,255,0.2); }
+    .preview-img {
+      width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--border-color);
+      background: linear-gradient(145deg, #1a1a1a, #0a0a0a); display: block;
+    }
+    .card-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
+    .card-content h3 { font-size: 1.3rem; margin: 0; }
+    .language-badge { background: rgba(0,210,255,0.15); color: var(--primary-soft-cyan); padding: 0.2rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
+    .updated-date { font-size: 0.8rem; color: var(--text-gray); display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.5rem; }
+    .card-content p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 1rem; flex: 1; }
+    .card-links { margin-top: auto; display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .card-links a {
+      text-decoration: none; color: white; background: var(--gradient-blue); padding: 0.5rem 1.2rem; border-radius: 30px;
+      font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .card-links a:last-child { background: rgba(155, 89, 182, 0.9); }
+    .card-links a:hover { transform: translateY(-2px); filter: brightness(1.1); }
+    
+    /* ===== TESTIMONIALS - SEAMLESS INFINITE LOOP ===== */
+    .testimonials-container {
+      width: 100%;
+      overflow: hidden;
+      padding: 1rem 0;
+    }
+    .testimonials-slider {
+      display: flex;
+      width: fit-content;
+      animation: slideTestimonials 40s linear infinite;
+    }
+    .testimonials-slider:hover {
+      animation-play-state: paused;
+    }
+    .testimonial-card {
+      flex: 0 0 300px;
+      background: rgba(30, 30, 30, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 1.8rem;
+      margin-right: 1.5rem;
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -5px;
+      left: 10px;
+      font-size: 5rem;
+      color: rgba(0,168,255,0.1);
+      font-family: 'Orbitron', sans-serif;
+    }
+    .testimonial-text { font-size: 0.95rem; line-height: 1.5; color: var(--text-off-white); margin-bottom: 1rem; }
+    .testimonial-author { font-family: 'Orbitron', sans-serif; font-weight: 600; color: var(--primary-soft-cyan); }
+    .testimonial-role { font-size: 0.8rem; color: var(--text-gray); }
+    
+    /* duplicated cards for seamless loop – total width = 2 sets */
+    @keyframes slideTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-300px * 6 - 1.5rem * 6)); } /* width of exactly one set (6 cards) */
+    }
+    
+    /* ===== STATS SECTION - NOW A HORIZONTAL SLIDER ===== */
+    .stats-slider-container {
+      width: 100%;
+      overflow: hidden;
+      padding: 1rem 0;
+      margin: 2rem auto 0;
+    }
+    .stats-slider {
+      display: flex;
+      width: fit-content;
+      animation: slideStats 30s linear infinite;
+    }
+    .stats-slider:hover {
+      animation-play-state: paused;
+    }
+    .stat-item {
+      flex: 0 0 200px; /* fixed width for consistency */
+      background: rgba(30, 30, 30, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 2rem 1rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      margin-right: 1.5rem;
+    }
+    .stat-item:hover { border-color: var(--primary-electric-blue); transform: scale(1.02); }
+    .stat-number { font-size: 2.8rem; font-weight: 900; font-family: 'Orbitron', sans-serif; background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+    .stars { color: #ffd700; font-size: 1.2rem; margin: 0.3rem 0; }
+    .stat-label { font-size: 1rem; color: var(--text-gray); }
+    
+    @keyframes slideStats {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-200px * 4 - 1.5rem * 4)); } /* 4 stats items = one set */
+    }
+    
+    /* socials */
+    .socials { text-align: center; padding: 2rem; background: rgba(30,30,30,0.5); border-radius: 30px; margin-top: 2rem; }
+    .social-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    .social-icon { display: inline-flex; width: 60px; height: 60px; border-radius: 50%; background: rgba(30,30,30,0.7); color: white; font-size: 1.8rem; align-items: center; justify-content: center; transition: all 0.3s; border: 1px solid var(--border-color); backdrop-filter: blur(5px); }
+    .social-icon:hover { transform: translateY(-5px) scale(1.1); background: var(--primary-electric-blue); }
+    
+    footer { text-align: center; padding: 2rem; background: rgba(17,17,17,0.8); backdrop-filter: blur(8px); border-top: 1px solid rgba(0,168,255,0.2); margin-top: 2rem; }
+    
+    /* animations */
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+    
+    /* mobile fine-tuning */
+    @media (max-width: 600px) {
+      .testimonial-card { flex: 0 0 260px; }
+      .stat-item { flex: 0 0 160px; }
+      .social-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+      .card-links a { width: 100%; justify-content: center; }
+      @keyframes slideTestimonials {
+        100% { transform: translateX(calc(-260px * 6 - 1.5rem * 6)); }
+      }
+      @keyframes slideStats {
+        100% { transform: translateX(calc(-160px * 4 - 1.5rem * 4)); }
+      }
+    }
+    @media (max-width: 400px) {
+      .stat-item { flex: 0 0 140px; }
+    }
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--primary-electric-blue), var(--primary-soft-cyan)); z-index: 1000; width: 0%; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <a href="#about" class="sr-only">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  
+  <header>
+    <div class="logo-container">
+      <div class="logo-circle">
+        <!-- Original logo image: loidforger.png with fallback -->
+        <img src="loidforger.png" alt="Loid Forger - Full Stack Developer" class="logo-img" id="logo-image" width="220" height="220" loading="eager" onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div class=\'logo-fallback\'>LF</div>';">
+      </div>
+      <div class="logo-text">
+        <h1>Loid Forger <span>— Frontend, Backend & Web3 Developer</span></h1>
+        <p>Full-stack developer focused on clean interfaces and reliable systems</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>I'm <strong>Loid Forger</strong>, a <strong>5-star rated full-stack developer</strong> specializing in <strong>frontend</strong>, <strong>backend</strong>, and <strong>Web3</strong>. 50+ clients brought to life with clean, professional websites.</p>
+        <p>From responsive interfaces to blockchain features, I write clean code and solve real problems.</p>
+        <p>Always looking to <em>grow, improve, and build things that matter.</em></p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills-container">
+        <div class="skill-category"><h3><i class="fas fa-code"></i> Technical</h3><ul class="skill-list"><li>Frontend Development</li><li>Backend Development</li><li>Web3 Development</li><li>Problem Solving</li></ul></div>
+        <div class="skill-category"><h3><i class="fas fa-cogs"></i> Frameworks</h3><div class="skill-tags"><span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">Node.js</span><span class="skill-tag">Express</span></div></div>
+        <div class="skill-category"><h3><i class="fas fa-tools"></i> Tools</h3><ul class="skill-list"><li>Git, GitHub</li><li>VS Code</li><li>Chrome DevTools</li></ul></div>
+        <div class="skill-category"><h3><i class="fas fa-rocket"></i> Deployment</h3><ul class="skill-list"><li>Netlify, Vercel</li><li>Discord</li><li>Telegram</li></ul></div>
+      </div>
+    </section>
+
+    <section id="projects-section">
+      <h2>My Projects</h2>
+      <div id="projects" aria-live="polite"><p style="text-align:center;">📡 Fetching live projects from GitHub...</p></div>
+    </section>
+
+    <!-- TESTIMONIALS - SEAMLESS LOOP (cards duplicated for infinite effect) -->
+    <section id="testimonials">
+      <h2>Client Testimonials</h2>
+      <div class="testimonials-container">
+        <div class="testimonials-slider">
+          <!-- First set (6 cards) -->
+          <div class="testimonial-card"><div class="testimonial-text">"Working with Loid was one of the best decisions... he understood Web3 culture instantly."</div><div class="testimonial-author">TaxEvasionTuna</div><div class="testimonial-role">Core Team</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"We needed a site that felt serious but aligned with memecoin space. Loid delivered."</div><div class="testimonial-author">Dadacoin</div><div class="testimonial-role">Founder</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"Optima-X required a modern presence. Loid built a site that communicates innovation."</div><div class="testimonial-author">Optima-X</div><div class="testimonial-role">Lead</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"Speed matters in Web3, and Loid moves fast without sacrificing quality."</div><div class="testimonial-author">WaveCoin</div><div class="testimonial-role">Marketing</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"Most developers don't understand meme energy. Loid does."</div><div class="testimonial-author">PumpCat</div><div class="testimonial-role">CM</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"SharedCoin needed clarity. Loid structured everything intuitively."</div><div class="testimonial-author">SharedCoin</div><div class="testimonial-role">Co-Founder</div></div>
+          <!-- Duplicate set for seamless loop -->
+          <div class="testimonial-card"><div class="testimonial-text">"Working with Loid was one of the best decisions... he understood Web3 culture instantly."</div><div class="testimonial-author">TaxEvasionTuna</div><div class="testimonial-role">Core Team</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"We needed a site that felt serious but aligned with memecoin space. Loid delivered."</div><div class="testimonial-author">Dadacoin</div><div class="testimonial-role">Founder</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"Optima-X required a modern presence. Loid built a site that communicates innovation."</div><div class="testimonial-author">Optima-X</div><div class="testimonial-role">Lead</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"Speed matters in Web3, and Loid moves fast without sacrificing quality."</div><div class="testimonial-author">WaveCoin</div><div class="testimonial-role">Marketing</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"Most developers don't understand meme energy. Loid does."</div><div class="testimonial-author">PumpCat</div><div class="testimonial-role">CM</div></div>
+          <div class="testimonial-card"><div class="testimonial-text">"SharedCoin needed clarity. Loid structured everything intuitively."</div><div class="testimonial-author">SharedCoin</div><div class="testimonial-role">Co-Founder</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT WITH ME (SOCIALS) -->
+    <section class="socials">
+      <h3>Connect With Me</h3>
+      <div class="social-icons">
+        <a href="https://x.com/LoidForger_X" target="_blank" class="social-icon" aria-label="X"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me/Loid_ForgerX" target="_blank" class="social-icon" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/LoidForger-dev" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </section>
+
+    <!-- STATS SECTION - NOW AS HORIZONTAL SLIDER (placed after socials, before footer) -->
+    <section class="stats-slider-container">
+      <div class="stats-slider">
+        <!-- First set -->
+        <div class="stat-item"><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
+        <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-item"><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
+        <div class="stat-item"><div class="stat-number">24h</div><div class="stat-label">Avg Delivery</div></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="stat-item"><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
+        <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-item"><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
+        <div class="stat-item"><div class="stat-number">24h</div><div class="stat-label">Avg Delivery</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Loid Forger. All rights reserved.</p>
+    <p>⭐ 50+ Happy Clients • 100x ROI • 24h Delivery</p>
+  </footer>
+
+  <script>
+    (function() {
+      // set year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // particles (optional, kept for extra effect)
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+          particles: {
+            number: { value: 40, density: { enable: true, value_area: 800 } },
+            color: { value: '#00a8ff' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.2, random: true },
+            size: { value: 2, random: true },
+            line_linked: { enable: true, distance: 150, color: '#00a8ff', opacity: 0.1, width: 1 },
+            move: { enable: true, speed: 1.5, direction: 'none', random: true, out_mode: 'out' }
+          },
+          interactivity: {
+            events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } }
+          }
+        });
+      }
+
+      // scroll progress
+      const progress = document.querySelector('.scroll-progress');
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        progress.style.width = (winScroll / height) * 100 + '%';
+      });
+
+      // GITHUB PROJECTS with SCREENSHOT PREVIEWS via microlink
+      const GITHUB_USER = 'LoidForger-dev';
+      const projectsContainer = document.getElementById('projects');
+
+      async function fetchProjects() {
+        try {
+          projectsContainer.innerHTML = '<p style="text-align:center;">📡 Fetching projects from GitHub...</p>';
+          const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`);
+          if (!res.ok) throw new Error(`GitHub error ${res.status}`);
+          const repos = await res.json();
+          
+          const withHomepage = repos.filter(r => r.homepage && r.homepage.trim() && !r.archived);
+          if (withHomepage.length === 0) {
+            projectsContainer.innerHTML = '<p class="no-projects">📭 No projects with live demos found.</p>';
+            return;
+          }
+          displayProjects(withHomepage);
+        } catch (e) {
+          projectsContainer.innerHTML = `<p style="text-align:center;color:var(--primary-electric-blue);">⚠️ GitHub API rate limit. Please try later.</p>`;
+        }
+      }
+
+      function displayProjects(repos) {
+        projectsContainer.innerHTML = '';
+        repos.sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+        repos.forEach((repo) => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          
+          const homepage = encodeURIComponent(repo.homepage);
+          const imgSrc = `https://api.microlink.io/?url=${homepage}&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitUntil=networkidle2&force=true&ttl=86400`;
+          
+          const description = (repo.description || 'A professional Web3 project with clean interface.').slice(0,120);
+          const langColor = repo.language === 'JavaScript' ? '#f1e05a' : repo.language === 'TypeScript' ? '#2b7489' : '#00a8ff';
+          const updateDate = new Date(repo.updated_at).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+
+          card.innerHTML = `
+            <img class="preview-img" src="${imgSrc}" alt="${repo.name} preview" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'200\\' viewBox=\\'0 0 400 200\\'%3E%3Crect width=\\'400\\' height=\\'200\\' fill=\\'%230a0a0a\\'/%3E%3Ctext x=\\'50%\\' y=\\'50%\\' font-size=\\'24\\' fill=\\'%2300a8ff\\' font-family=\\'Orbitron\\' text-anchor=\\'middle\\' dy=\\'.3em\\'%3E${repo.name}%3C/text%3E%3C/svg%3E';">
+            <div class="card-content">
+              <div class="card-header">
+                <h3>${escapeHtml(repo.name)}</h3>
+                ${repo.language ? `<span class="language-badge" style="background:${langColor}20; color:${langColor}">${repo.language}</span>` : ''}
+              </div>
+              <div class="updated-date"><i class="far fa-calendar-alt"></i> Updated ${updateDate}</div>
+              <p>${escapeHtml(description)}</p>
+              <div class="card-links">
+                <a href="${repo.homepage}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="${repo.html_url}" target="_blank" rel="noopener"><i class="fab fa-github"></i> View Code</a>
+              </div>
+            </div>
+          `;
+          projectsContainer.appendChild(card);
+        });
+
+        const count = document.createElement('p');
+        count.style.cssText = 'grid-column:1/-1; text-align:center; color:var(--text-gray); margin-top:1rem;';
+        count.innerText = `📁 Showing ${repos.length} project${repos.length>1?'s':''} with live demos.`;
+        projectsContainer.appendChild(count);
+      }
+
+      function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      fetchProjects();
+      setInterval(fetchProjects, 10*60*1000);
+    })();
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "Person", "name": "Loid Forger", "url": "https://loidforgerportfolio.netlify.app/", "jobTitle": "Full Stack Developer", "description": "5-star rated full-stack developer specializing in frontend, backend, and Web3 development. 50+ successful projects." }
+  </script>
+</body>
+</html>
