@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Favicon (placeholder) -->
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300a8ff'>LF</text></svg>">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300ff88'>LF</text></svg>">
   
   <!-- Google Fonts + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -40,17 +40,17 @@
     :root {
       --bg-soft-black: #0a0a0a;
       --bg-dark-charcoal: #111111;
-      --primary-electric-blue: #00a8ff;
-      --primary-soft-cyan: #00d2ff;
-      --primary-glow: rgba(0, 168, 255, 0.3);
-      --secondary-muted-purple: #9b59b6;
+      --primary-green: #00ff88;
+      --primary-soft-green: #00cc66;
+      --primary-glow: rgba(0, 255, 136, 0.3);
+      --secondary-teal: #00b894;
       --text-off-white: #f5f5f5;
       --text-gray: #b0b0b0;
       --card-bg: rgba(20, 20, 20, 0.6);
       --border-color: #2a2a2a;
       --content-width: min(1200px, 90vw);
-      --gradient-blue: linear-gradient(135deg, #00a8ff, #00d2ff);
-      --gradient-purple: linear-gradient(135deg, #9b59b6, #8e44ad);
+      --gradient-green: linear-gradient(135deg, #00ff88, #00cc66);
+      --gradient-teal: linear-gradient(135deg, #00b894, #00997c);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -92,49 +92,53 @@
       text-align: center;
       padding: 5rem 1rem 4rem;
       animation: fadeInUp 1s ease-out 0.3s forwards;
-      border-bottom: 1px solid rgba(0, 168, 255, 0.2);
-      box-shadow: 0 0 30px rgba(0, 168, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+      box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
     }
     .logo-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem; }
     .logo-circle {
       width: clamp(180px, 30vw, 220px);
       height: clamp(180px, 30vw, 220px);
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-electric-blue), var(--primary-soft-cyan), var(--secondary-muted-purple));
+      background: linear-gradient(135deg, var(--primary-green), var(--primary-soft-green), var(--secondary-teal));
       background-size: 200% 200%;
       display: flex; justify-content: center; align-items: center; margin-bottom: 2rem;
-      box-shadow: 0 0 20px rgba(0, 168, 255, 0.3); /* reduced glow */
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
       animation: gradientShift 8s infinite alternate;
       position: relative;
+      overflow: hidden; /* ensures circle clipping */
     }
-    .logo-circle:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 168, 255, 0.5); }
-    /* removed pulsing rings */
+    .logo-circle:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 255, 136, 0.5); }
     .logo-img {
-      width: 70%; border-radius: 50%; aspect-ratio: 1/1; border: 3px solid rgba(255,255,255,0.2);
-      object-fit: cover; z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;           /* makes image fill square without distortion */
+      border: 3px solid rgba(255,255,255,0.2);
+      z-index: 2;
     }
     .logo-fallback {
       font-family: 'Orbitron', sans-serif; font-size: 3rem; font-weight: 900; color: white;
-      z-index: 2; text-shadow: 0 0 10px rgba(0,168,255,0.5);
+      z-index: 2; text-shadow: 0 0 10px rgba(0,255,136,0.5);
     }
     .logo-text { display: flex; flex-direction: column; align-items: center; animation: fadeInUp 0.8s ease-out 0.8s forwards; }
-    header h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 900; color: var(--text-off-white); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,168,255,0.3); }
-    header h1 span { color: var(--primary-electric-blue); text-shadow: 0 0 10px rgba(0,210,255,0.5); }
+    header h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 900; color: var(--text-off-white); margin-bottom: 0.5rem; text-shadow: 0 0 15px rgba(0,255,136,0.3); }
+    header h1 span { color: var(--primary-green); text-shadow: 0 0 10px rgba(0,255,136,0.5); }
     header p { font-size: clamp(1rem, 3vw, 1.3rem); color: var(--text-gray); max-width: 600px; margin: 0 auto; }
     
     section {
       padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem);
       max-width: var(--content-width);
       margin: 0 auto 2rem;
-      background: rgba(10, 10, 10, 0.5); /* more transparent for glass */
+      background: rgba(10, 10, 10, 0.5);
       backdrop-filter: blur(10px);
       border-radius: 20px;
       border: 1px solid rgba(255,255,255,0.05);
     }
-    h2 { text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 2rem; color: var(--text-off-white); letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,168,255,0.2); }
+    h2 { text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 2rem; color: var(--text-off-white); letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,255,136,0.2); }
     h2::after {
       content: ""; display: block; width: 80px; height: 4px;
-      background: linear-gradient(90deg, var(--primary-electric-blue), var(--primary-soft-cyan), var(--secondary-muted-purple));
+      background: linear-gradient(90deg, var(--primary-green), var(--primary-soft-green), var(--secondary-teal));
       margin: 0.75rem auto 0; border-radius: 2px;
     }
     
@@ -145,13 +149,13 @@
       border-radius: 16px; padding: 1.5rem;
       border: 1px solid var(--border-color); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .skill-category:hover { transform: translateY(-5px); border-color: var(--primary-electric-blue); box-shadow: 0 0 20px rgba(0,168,255,0.2); }
-    .skill-category h3 { font-size: 1.4rem; color: var(--primary-soft-cyan); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+    .skill-category:hover { transform: translateY(-5px); border-color: var(--primary-green); box-shadow: 0 0 20px rgba(0,255,136,0.2); }
+    .skill-category h3 { font-size: 1.4rem; color: var(--primary-soft-green); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
     .skill-list { list-style: none; }
     .skill-list li { margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
-    .skill-list li::before { content: '▸'; left: 0; color: var(--primary-electric-blue); position: absolute; }
+    .skill-list li::before { content: '▸'; left: 0; color: var(--primary-green); position: absolute; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-    .skill-tag { background: rgba(0,168,255,0.15); color: var(--primary-soft-cyan); padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; border: 1px solid rgba(0,168,255,0.3); backdrop-filter: blur(5px); }
+    .skill-tag { background: rgba(0,255,136,0.15); color: var(--primary-soft-green); padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; border: 1px solid rgba(0,255,136,0.3); backdrop-filter: blur(5px); }
     
     /* projects grid */
     #projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 2rem; }
@@ -161,24 +165,21 @@
       border: 1px solid var(--border-color); transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: flex; flex-direction: column;
     }
-    .card:hover { transform: translateY(-8px); border-color: var(--primary-electric-blue); box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,168,255,0.2); }
+    .card:hover { transform: translateY(-8px); border-color: var(--primary-green); box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,255,136,0.2); }
     .preview-img {
       width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--border-color);
       background: linear-gradient(145deg, #1a1a1a, #0a0a0a); display: block;
     }
     .card-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
-    .card-content h3 { font-size: 1.3rem; margin: 0; }
-    .language-badge { background: rgba(0,210,255,0.15); color: var(--primary-soft-cyan); padding: 0.2rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600; }
-    .updated-date { font-size: 0.8rem; color: var(--text-gray); display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.5rem; }
+    .card-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--primary-green); }
     .card-content p { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 1rem; flex: 1; }
     .card-links { margin-top: auto; display: flex; gap: 0.8rem; flex-wrap: wrap; }
     .card-links a {
-      text-decoration: none; color: white; background: var(--gradient-blue); padding: 0.5rem 1.2rem; border-radius: 30px;
+      text-decoration: none; color: white; background: var(--gradient-green); padding: 0.5rem 1.2rem; border-radius: 30px;
       font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);
       display: inline-flex; align-items: center; gap: 0.4rem;
     }
-    .card-links a:last-child { background: rgba(155, 89, 182, 0.9); }
+    .card-links a:last-child { background: var(--gradient-teal); }
     .card-links a:hover { transform: translateY(-2px); filter: brightness(1.1); }
     
     /* ===== TESTIMONIALS - SEAMLESS INFINITE LOOP ===== */
@@ -211,11 +212,11 @@
       top: -5px;
       left: 10px;
       font-size: 5rem;
-      color: rgba(0,168,255,0.1);
+      color: rgba(0, 255, 136, 0.1);
       font-family: 'Orbitron', sans-serif;
     }
     .testimonial-text { font-size: 0.95rem; line-height: 1.5; color: var(--text-off-white); margin-bottom: 1rem; }
-    .testimonial-author { font-family: 'Orbitron', sans-serif; font-weight: 600; color: var(--primary-soft-cyan); }
+    .testimonial-author { font-family: 'Orbitron', sans-serif; font-weight: 600; color: var(--primary-soft-green); }
     .testimonial-role { font-size: 0.8rem; color: var(--text-gray); }
     
     /* duplicated cards for seamless loop – total width = 2 sets */
@@ -224,7 +225,7 @@
       100% { transform: translateX(calc(-300px * 6 - 1.5rem * 6)); } /* width of exactly one set (6 cards) */
     }
     
-    /* ===== STATS SECTION - NOW A HORIZONTAL SLIDER ===== */
+    /* ===== STATS SECTION - SMALLER "ICON TYPE" ===== */
     .stats-slider-container {
       width: 100%;
       overflow: hidden;
@@ -240,32 +241,55 @@
       animation-play-state: paused;
     }
     .stat-item {
-      flex: 0 0 200px; /* fixed width for consistency */
+      flex: 0 0 130px;           /* reduced from 200px */
       background: rgba(30, 30, 30, 0.7);
       backdrop-filter: blur(10px);
-      padding: 2rem 1rem;
-      border-radius: 20px;
+      padding: 1rem 0.5rem;      /* smaller padding */
+      border-radius: 30px;       /* more rounded */
       border: 1px solid var(--border-color);
       text-align: center;
-      margin-right: 1.5rem;
+      margin-right: 1rem;         /* reduced gap */
+      transition: 0.2s;
     }
-    .stat-item:hover { border-color: var(--primary-electric-blue); transform: scale(1.02); }
-    .stat-number { font-size: 2.8rem; font-weight: 900; font-family: 'Orbitron', sans-serif; background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
-    .stars { color: #ffd700; font-size: 1.2rem; margin: 0.3rem 0; }
-    .stat-label { font-size: 1rem; color: var(--text-gray); }
+    .stat-item:hover { border-color: var(--primary-green); transform: scale(1.02); }
+    .stat-icon {
+      font-size: 1.8rem;
+      color: var(--primary-green);
+      margin-bottom: 0.2rem;
+    }
+    .stat-number {
+      font-size: 1.6rem;          /* smaller */
+      font-weight: 900;
+      font-family: 'Orbitron', sans-serif;
+      background: var(--gradient-green);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+    .stars {
+      color: #ffd700;
+      font-size: 0.9rem;          /* smaller stars */
+      margin: 0.1rem 0;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
     
     @keyframes slideStats {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-200px * 4 - 1.5rem * 4)); } /* 4 stats items = one set */
+      100% { transform: translateX(calc(-130px * 4 - 1rem * 4)); } /* 4 stats items = one set */
     }
     
     /* socials */
     .socials { text-align: center; padding: 2rem; background: rgba(30,30,30,0.5); border-radius: 30px; margin-top: 2rem; }
     .social-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
     .social-icon { display: inline-flex; width: 60px; height: 60px; border-radius: 50%; background: rgba(30,30,30,0.7); color: white; font-size: 1.8rem; align-items: center; justify-content: center; transition: all 0.3s; border: 1px solid var(--border-color); backdrop-filter: blur(5px); }
-    .social-icon:hover { transform: translateY(-5px) scale(1.1); background: var(--primary-electric-blue); }
+    .social-icon:hover { transform: translateY(-5px) scale(1.1); background: var(--primary-green); }
     
-    footer { text-align: center; padding: 2rem; background: rgba(17,17,17,0.8); backdrop-filter: blur(8px); border-top: 1px solid rgba(0,168,255,0.2); margin-top: 2rem; }
+    footer { text-align: center; padding: 2rem; background: rgba(17,17,17,0.8); backdrop-filter: blur(8px); border-top: 1px solid rgba(0,255,136,0.2); margin-top: 2rem; }
     
     /* animations */
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
@@ -274,20 +298,23 @@
     /* mobile fine-tuning */
     @media (max-width: 600px) {
       .testimonial-card { flex: 0 0 260px; }
-      .stat-item { flex: 0 0 160px; }
+      .stat-item { flex: 0 0 105px; padding: 0.8rem 0.2rem; }
+      .stat-number { font-size: 1.4rem; }
+      .stat-icon { font-size: 1.5rem; }
+      .stars { font-size: 0.8rem; }
       .social-icon { width: 50px; height: 50px; font-size: 1.5rem; }
       .card-links a { width: 100%; justify-content: center; }
       @keyframes slideTestimonials {
         100% { transform: translateX(calc(-260px * 6 - 1.5rem * 6)); }
       }
       @keyframes slideStats {
-        100% { transform: translateX(calc(-160px * 4 - 1.5rem * 4)); }
+        100% { transform: translateX(calc(-105px * 4 - 1rem * 4)); }
       }
     }
     @media (max-width: 400px) {
-      .stat-item { flex: 0 0 140px; }
+      .stat-item { flex: 0 0 90px; }
     }
-    .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--primary-electric-blue), var(--primary-soft-cyan)); z-index: 1000; width: 0%; }
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--primary-green), var(--primary-soft-green)); z-index: 1000; width: 0%; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; }
   </style>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -300,7 +327,7 @@
   <header>
     <div class="logo-container">
       <div class="logo-circle">
-        <!-- Original logo image: loidforger.png with fallback -->
+        <!-- Logo image with fixed circle -->
         <img src="loidforger.png" alt="Loid Forger - Full Stack Developer" class="logo-img" id="logo-image" width="220" height="220" loading="eager" onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div class=\'logo-fallback\'>LF</div>';">
       </div>
       <div class="logo-text">
@@ -335,7 +362,7 @@
       <div id="projects" aria-live="polite"><p style="text-align:center;">📡 Fetching live projects from GitHub...</p></div>
     </section>
 
-    <!-- TESTIMONIALS - SEAMLESS LOOP (cards duplicated for infinite effect) -->
+    <!-- TESTIMONIALS - SEAMLESS LOOP -->
     <section id="testimonials">
       <h2>Client Testimonials</h2>
       <div class="testimonials-container">
@@ -368,19 +395,19 @@
       </div>
     </section>
 
-    <!-- STATS SECTION - NOW AS HORIZONTAL SLIDER (placed after socials, before footer) -->
+    <!-- STATS SECTION - SMALLER WITH ICONS -->
     <section class="stats-slider-container">
       <div class="stats-slider">
-        <!-- First set -->
-        <div class="stat-item"><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
-        <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
-        <div class="stat-item"><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
-        <div class="stat-item"><div class="stat-number">24h</div><div class="stat-label">Avg Delivery</div></div>
+        <!-- First set with icons -->
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-number">24h</div><div class="stat-label">Avg Delivery</div></div>
         <!-- Duplicate set for seamless loop -->
-        <div class="stat-item"><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
-        <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
-        <div class="stat-item"><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
-        <div class="stat-item"><div class="stat-number">24h</div><div class="stat-label">Avg Delivery</div></div>
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
+        <div class="stat-item"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-number">24h</div><div class="stat-label">Avg Delivery</div></div>
       </div>
     </section>
   </main>
@@ -394,16 +421,16 @@
       // set year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // particles (optional, kept for extra effect)
+      // particles with green
       if (typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
           particles: {
             number: { value: 40, density: { enable: true, value_area: 800 } },
-            color: { value: '#00a8ff' },
+            color: { value: '#00ff88' },
             shape: { type: 'circle' },
             opacity: { value: 0.2, random: true },
             size: { value: 2, random: true },
-            line_linked: { enable: true, distance: 150, color: '#00a8ff', opacity: 0.1, width: 1 },
+            line_linked: { enable: true, distance: 150, color: '#00ff88', opacity: 0.1, width: 1 },
             move: { enable: true, speed: 1.5, direction: 'none', random: true, out_mode: 'out' }
           },
           interactivity: {
@@ -420,7 +447,7 @@
         progress.style.width = (winScroll / height) * 100 + '%';
       });
 
-      // GITHUB PROJECTS with SCREENSHOT PREVIEWS via microlink
+      // GITHUB PROJECTS with SCREENSHOT PREVIEWS (removed language & date)
       const GITHUB_USER = 'LoidForger-dev';
       const projectsContainer = document.getElementById('projects');
 
@@ -438,7 +465,7 @@
           }
           displayProjects(withHomepage);
         } catch (e) {
-          projectsContainer.innerHTML = `<p style="text-align:center;color:var(--primary-electric-blue);">⚠️ GitHub API rate limit. Please try later.</p>`;
+          projectsContainer.innerHTML = `<p style="text-align:center;color:var(--primary-green);">⚠️ GitHub API rate limit. Please try later.</p>`;
         }
       }
 
@@ -454,17 +481,11 @@
           const imgSrc = `https://api.microlink.io/?url=${homepage}&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitUntil=networkidle2&force=true&ttl=86400`;
           
           const description = (repo.description || 'A professional Web3 project with clean interface.').slice(0,120);
-          const langColor = repo.language === 'JavaScript' ? '#f1e05a' : repo.language === 'TypeScript' ? '#2b7489' : '#00a8ff';
-          const updateDate = new Date(repo.updated_at).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
 
           card.innerHTML = `
-            <img class="preview-img" src="${imgSrc}" alt="${repo.name} preview" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'200\\' viewBox=\\'0 0 400 200\\'%3E%3Crect width=\\'400\\' height=\\'200\\' fill=\\'%230a0a0a\\'/%3E%3Ctext x=\\'50%\\' y=\\'50%\\' font-size=\\'24\\' fill=\\'%2300a8ff\\' font-family=\\'Orbitron\\' text-anchor=\\'middle\\' dy=\\'.3em\\'%3E${repo.name}%3C/text%3E%3C/svg%3E';">
+            <img class="preview-img" src="${imgSrc}" alt="${repo.name} preview" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'200\\' viewBox=\\'0 0 400 200\\'%3E%3Crect width=\\'400\\' height=\\'200\\' fill=\\'%230a0a0a\\'/%3E%3Ctext x=\\'50%\\' y=\\'50%\\' font-size=\\'24\\' fill=\\'%2300ff88\\' font-family=\\'Orbitron\\' text-anchor=\\'middle\\' dy=\\'.3em\\'%3E${repo.name}%3C/text%3E%3C/svg%3E';">
             <div class="card-content">
-              <div class="card-header">
-                <h3>${escapeHtml(repo.name)}</h3>
-                ${repo.language ? `<span class="language-badge" style="background:${langColor}20; color:${langColor}">${repo.language}</span>` : ''}
-              </div>
-              <div class="updated-date"><i class="far fa-calendar-alt"></i> Updated ${updateDate}</div>
+              <h3>${escapeHtml(repo.name)}</h3>
               <p>${escapeHtml(description)}</p>
               <div class="card-links">
                 <a href="${repo.homepage}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -496,4 +517,4 @@
   { "@context": "https://schema.org", "@type": "Person", "name": "Loid Forger", "url": "https://loidforgerportfolio.netlify.app/", "jobTitle": "Full Stack Developer", "description": "5-star rated full-stack developer specializing in frontend, backend, and Web3 development. 50+ successful projects." }
   </script>
 </body>
-</html>
+  </html>
