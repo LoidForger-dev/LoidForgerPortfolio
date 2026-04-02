@@ -54,7 +54,6 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
-    /* Background image with low opacity */
     body {
       font-family: 'Roboto', system-ui, sans-serif;
       background: var(--bg-soft-black);
@@ -76,7 +75,7 @@
       height: 100%;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
-      opacity: 0.15; /* low opacity */
+      opacity: 0.15;
       z-index: -1;
       pointer-events: none;
     }
@@ -84,11 +83,9 @@
     h1, h2, h3, h4, h5, h6 { font-family: 'Orbitron', sans-serif; font-weight: 700; color: var(--text-off-white); letter-spacing: 1px; }
     header, section, footer { position: relative; z-index: 1; backdrop-filter: blur(8px); }
     
-    /* header */
     header {
       background: rgba(17, 17, 17, 0.7);
       backdrop-filter: blur(12px);
-      color: white;
       text-align: center;
       padding: 5rem 1rem 4rem;
       animation: fadeInUp 1s ease-out 0.3s forwards;
@@ -106,14 +103,14 @@
       box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
       animation: gradientShift 8s infinite alternate;
       position: relative;
-      overflow: hidden; /* ensures circle clipping */
+      overflow: hidden;
     }
     .logo-circle:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0, 255, 136, 0.5); }
     .logo-img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      object-fit: cover;           /* makes image fill square without distortion */
+      object-fit: cover;
       border: 3px solid rgba(255,255,255,0.2);
       z-index: 2;
     }
@@ -142,7 +139,6 @@
       margin: 0.75rem auto 0; border-radius: 2px;
     }
     
-    /* skills */
     .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1.5rem; margin-top: 2rem; }
     .skill-category {
       background: rgba(30, 30, 30, 0.5); backdrop-filter: blur(10px);
@@ -157,7 +153,6 @@
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .skill-tag { background: rgba(0,255,136,0.15); color: var(--primary-soft-green); padding: 0.4rem 1rem; border-radius: 25px; font-size: 0.9rem; border: 1px solid rgba(0,255,136,0.3); backdrop-filter: blur(5px); }
     
-    /* projects grid */
     #projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 2rem; }
     .card {
       background: rgba(30, 30, 30, 0.6); backdrop-filter: blur(10px);
@@ -182,7 +177,6 @@
     .card-links a:last-child { background: var(--gradient-teal); }
     .card-links a:hover { transform: translateY(-2px); filter: brightness(1.1); }
     
-    /* ===== TESTIMONIALS - SEAMLESS INFINITE LOOP ===== */
     .testimonials-container {
       width: 100%;
       overflow: hidden;
@@ -193,9 +187,7 @@
       width: fit-content;
       animation: slideTestimonials 40s linear infinite;
     }
-    .testimonials-slider:hover {
-      animation-play-state: paused;
-    }
+    .testimonials-slider:hover { animation-play-state: paused; }
     .testimonial-card {
       flex: 0 0 300px;
       background: rgba(30, 30, 30, 0.7);
@@ -219,13 +211,11 @@
     .testimonial-author { font-family: 'Orbitron', sans-serif; font-weight: 600; color: var(--primary-soft-green); }
     .testimonial-role { font-size: 0.8rem; color: var(--text-gray); }
     
-    /* duplicated cards for seamless loop – total width = 2 sets */
     @keyframes slideTestimonials {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-300px * 6 - 1.5rem * 6)); } /* width of exactly one set (6 cards) */
+      100% { transform: translateX(calc(-300px * 6 - 1.5rem * 6)); }
     }
     
-    /* ===== STATS SECTION - SMALLER "ICON TYPE" ===== */
     .stats-slider-container {
       width: 100%;
       overflow: hidden;
@@ -237,53 +227,29 @@
       width: fit-content;
       animation: slideStats 30s linear infinite;
     }
-    .stats-slider:hover {
-      animation-play-state: paused;
-    }
+    .stats-slider:hover { animation-play-state: paused; }
     .stat-item {
-      flex: 0 0 130px;           /* reduced from 200px */
+      flex: 0 0 130px;
       background: rgba(30, 30, 30, 0.7);
       backdrop-filter: blur(10px);
-      padding: 1rem 0.5rem;      /* smaller padding */
-      border-radius: 30px;       /* more rounded */
+      padding: 1rem 0.5rem;
+      border-radius: 30px;
       border: 1px solid var(--border-color);
       text-align: center;
-      margin-right: 1rem;         /* reduced gap */
+      margin-right: 1rem;
       transition: 0.2s;
     }
     .stat-item:hover { border-color: var(--primary-green); transform: scale(1.02); }
-    .stat-icon {
-      font-size: 1.8rem;
-      color: var(--primary-green);
-      margin-bottom: 0.2rem;
-    }
-    .stat-number {
-      font-size: 1.6rem;          /* smaller */
-      font-weight: 900;
-      font-family: 'Orbitron', sans-serif;
-      background: var(--gradient-green);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      line-height: 1.2;
-    }
-    .stars {
-      color: #ffd700;
-      font-size: 0.9rem;          /* smaller stars */
-      margin: 0.1rem 0;
-    }
-    .stat-label {
-      font-size: 0.7rem;
-      color: var(--text-gray);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    .stat-icon { font-size: 1.8rem; color: var(--primary-green); margin-bottom: 0.2rem; }
+    .stat-number { font-size: 1.6rem; font-weight: 900; font-family: 'Orbitron', sans-serif; background: var(--gradient-green); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2; }
+    .stars { color: #ffd700; font-size: 0.9rem; margin: 0.1rem 0; }
+    .stat-label { font-size: 0.7rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.5px; }
     
     @keyframes slideStats {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-130px * 4 - 1rem * 4)); } /* 4 stats items = one set */
+      100% { transform: translateX(calc(-130px * 4 - 1rem * 4)); }
     }
     
-    /* socials */
     .socials { text-align: center; padding: 2rem; background: rgba(30,30,30,0.5); border-radius: 30px; margin-top: 2rem; }
     .social-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
     .social-icon { display: inline-flex; width: 60px; height: 60px; border-radius: 50%; background: rgba(30,30,30,0.7); color: white; font-size: 1.8rem; align-items: center; justify-content: center; transition: all 0.3s; border: 1px solid var(--border-color); backdrop-filter: blur(5px); }
@@ -291,11 +257,9 @@
     
     footer { text-align: center; padding: 2rem; background: rgba(17,17,17,0.8); backdrop-filter: blur(8px); border-top: 1px solid rgba(0,255,136,0.2); margin-top: 2rem; }
     
-    /* animations */
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes gradientShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
     
-    /* mobile fine-tuning */
     @media (max-width: 600px) {
       .testimonial-card { flex: 0 0 260px; }
       .stat-item { flex: 0 0 105px; padding: 0.8rem 0.2rem; }
@@ -304,18 +268,30 @@
       .stars { font-size: 0.8rem; }
       .social-icon { width: 50px; height: 50px; font-size: 1.5rem; }
       .card-links a { width: 100%; justify-content: center; }
-      @keyframes slideTestimonials {
-        100% { transform: translateX(calc(-260px * 6 - 1.5rem * 6)); }
-      }
-      @keyframes slideStats {
-        100% { transform: translateX(calc(-105px * 4 - 1rem * 4)); }
-      }
+      @keyframes slideTestimonials { 100% { transform: translateX(calc(-260px * 6 - 1.5rem * 6)); } }
+      @keyframes slideStats { 100% { transform: translateX(calc(-105px * 4 - 1rem * 4)); } }
     }
-    @media (max-width: 400px) {
-      .stat-item { flex: 0 0 90px; }
-    }
+    @media (max-width: 400px) { .stat-item { flex: 0 0 90px; } }
+    
     .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--primary-green), var(--primary-soft-green)); z-index: 1000; width: 0%; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; }
+    .retry-btn {
+      background: rgba(0,255,136,0.2);
+      border: 1px solid var(--primary-green);
+      color: var(--primary-green);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .retry-btn:hover { background: var(--primary-green); color: #0a0a0a; }
+    .error-message { text-align: center; padding: 2rem; background: rgba(255,0,0,0.1); border-radius: 20px; margin: 1rem; }
+    .cache-note { text-align: center; font-size: 0.8rem; margin-top: 1rem; color: var(--primary-soft-green); }
   </style>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
@@ -327,7 +303,6 @@
   <header>
     <div class="logo-container">
       <div class="logo-circle">
-        <!-- Logo image with fixed circle -->
         <img src="loidforger.png" alt="Loid Forger - Full Stack Developer" class="logo-img" id="logo-image" width="220" height="220" loading="eager" onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML += '<div class=\'logo-fallback\'>LF</div>';">
       </div>
       <div class="logo-text">
@@ -359,22 +334,19 @@
 
     <section id="projects-section">
       <h2>My Projects</h2>
-      <div id="projects" aria-live="polite"><p style="text-align:center;">📡 Fetching live projects from GitHub...</p></div>
+      <div id="projects" aria-live="polite"><p style="text-align:center;">📡 Loading projects...</p></div>
     </section>
 
-    <!-- TESTIMONIALS - SEAMLESS LOOP -->
     <section id="testimonials">
       <h2>Client Testimonials</h2>
       <div class="testimonials-container">
         <div class="testimonials-slider">
-          <!-- First set (6 cards) -->
           <div class="testimonial-card"><div class="testimonial-text">"Working with Loid was one of the best decisions... he understood Web3 culture instantly."</div><div class="testimonial-author">TaxEvasionTuna</div><div class="testimonial-role">Core Team</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"We needed a site that felt serious but aligned with memecoin space. Loid delivered."</div><div class="testimonial-author">Dadacoin</div><div class="testimonial-role">Founder</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Optima-X required a modern presence. Loid built a site that communicates innovation."</div><div class="testimonial-author">Optima-X</div><div class="testimonial-role">Lead</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Speed matters in Web3, and Loid moves fast without sacrificing quality."</div><div class="testimonial-author">WaveCoin</div><div class="testimonial-role">Marketing</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Most developers don't understand meme energy. Loid does."</div><div class="testimonial-author">PumpCat</div><div class="testimonial-role">CM</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"SharedCoin needed clarity. Loid structured everything intuitively."</div><div class="testimonial-author">SharedCoin</div><div class="testimonial-role">Co-Founder</div></div>
-          <!-- Duplicate set for seamless loop -->
           <div class="testimonial-card"><div class="testimonial-text">"Working with Loid was one of the best decisions... he understood Web3 culture instantly."</div><div class="testimonial-author">TaxEvasionTuna</div><div class="testimonial-role">Core Team</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"We needed a site that felt serious but aligned with memecoin space. Loid delivered."</div><div class="testimonial-author">Dadacoin</div><div class="testimonial-role">Founder</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Optima-X required a modern presence. Loid built a site that communicates innovation."</div><div class="testimonial-author">Optima-X</div><div class="testimonial-role">Lead</div></div>
@@ -385,7 +357,6 @@
       </div>
     </section>
 
-    <!-- CONNECT WITH ME (SOCIALS) -->
     <section class="socials">
       <h3>Connect With Me</h3>
       <div class="social-icons">
@@ -395,15 +366,12 @@
       </div>
     </section>
 
-    <!-- STATS SECTION - SMALLER WITH ICONS -->
     <section class="stats-slider-container">
       <div class="stats-slider">
-        <!-- First set with icons -->
         <div class="stat-item"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
         <div class="stat-item"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
         <div class="stat-item"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
         <div class="stat-item"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-number">24h</div><div class="stat-label">Avg Delivery</div></div>
-        <!-- Duplicate set for seamless loop -->
         <div class="stat-item"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-number">5.0</div><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="stat-label">Avg Rating</div></div>
         <div class="stat-item"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
         <div class="stat-item"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-number">100x</div><div class="stat-label">Highest ROI</div></div>
@@ -418,10 +386,8 @@
 
   <script>
     (function() {
-      // set year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // particles with green
       if (typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
           particles: {
@@ -433,13 +399,10 @@
             line_linked: { enable: true, distance: 150, color: '#00ff88', opacity: 0.1, width: 1 },
             move: { enable: true, speed: 1.5, direction: 'none', random: true, out_mode: 'out' }
           },
-          interactivity: {
-            events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } }
-          }
+          interactivity: { events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } } }
         });
       }
 
-      // scroll progress
       const progress = document.querySelector('.scroll-progress');
       window.addEventListener('scroll', () => {
         const winScroll = document.documentElement.scrollTop;
@@ -447,41 +410,30 @@
         progress.style.width = (winScroll / height) * 100 + '%';
       });
 
-      // GITHUB PROJECTS with SCREENSHOT PREVIEWS (removed language & date)
       const GITHUB_USER = 'LoidForger-dev';
       const projectsContainer = document.getElementById('projects');
+      const CACHE_KEY = 'loid_forger_projects';
+      const CACHE_TIME_KEY = 'loid_forger_cache_time';
 
-      async function fetchProjects() {
-        try {
-          projectsContainer.innerHTML = '<p style="text-align:center;">📡 Fetching projects from GitHub...</p>';
-          const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`);
-          if (!res.ok) throw new Error(`GitHub error ${res.status}`);
-          const repos = await res.json();
-          
-          const withHomepage = repos.filter(r => r.homepage && r.homepage.trim() && !r.archived);
-          if (withHomepage.length === 0) {
-            projectsContainer.innerHTML = '<p class="no-projects">📭 No projects with live demos found.</p>';
-            return;
-          }
-          displayProjects(withHomepage);
-        } catch (e) {
-          projectsContainer.innerHTML = `<p style="text-align:center;color:var(--primary-green);">⚠️ GitHub API rate limit. Please try later.</p>`;
-        }
+      function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
       }
 
-      function displayProjects(repos) {
+      function displayProjects(repos, isCached = false) {
+        if (!repos || repos.length === 0) {
+          projectsContainer.innerHTML = `<div style="text-align:center; padding:2rem;"><p>✨ No public projects with live demos at the moment.</p><a href="https://github.com/${GITHUB_USER}" target="_blank" style="color:var(--primary-green);">Check my GitHub →</a></div>`;
+          return;
+        }
         projectsContainer.innerHTML = '';
-        repos.sort((a,b) => new Date(b.updated_at) - new Date(a.updated_at));
-
-        repos.forEach((repo) => {
+        repos.slice(0, 12).forEach((repo) => {
           const card = document.createElement('article');
           card.className = 'card';
-          
           const homepage = encodeURIComponent(repo.homepage);
           const imgSrc = `https://api.microlink.io/?url=${homepage}&screenshot=true&meta=false&embed=screenshot.url&type=jpeg&waitUntil=networkidle2&force=true&ttl=86400`;
-          
-          const description = (repo.description || 'A professional Web3 project with clean interface.').slice(0,120);
-
+          const description = (repo.description || 'A professional Web3 project with clean interface.').slice(0, 120);
           card.innerHTML = `
             <img class="preview-img" src="${imgSrc}" alt="${repo.name} preview" loading="lazy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'200\\' viewBox=\\'0 0 400 200\\'%3E%3Crect width=\\'400\\' height=\\'200\\' fill=\\'%230a0a0a\\'/%3E%3Ctext x=\\'50%\\' y=\\'50%\\' font-size=\\'24\\' fill=\\'%2300ff88\\' font-family=\\'Orbitron\\' text-anchor=\\'middle\\' dy=\\'.3em\\'%3E${repo.name}%3C/text%3E%3C/svg%3E';">
             <div class="card-content">
@@ -495,26 +447,59 @@
           `;
           projectsContainer.appendChild(card);
         });
-
-        const count = document.createElement('p');
-        count.style.cssText = 'grid-column:1/-1; text-align:center; color:var(--text-gray); margin-top:1rem;';
-        count.innerText = `📁 Showing ${repos.length} project${repos.length>1?'s':''} with live demos.`;
-        projectsContainer.appendChild(count);
+        if (isCached) {
+          const note = document.createElement('div');
+          note.className = 'cache-note';
+          note.innerHTML = '<i class="fas fa-database"></i> Showing cached projects — GitHub API rate limit active. <button class="retry-btn" id="manualRetryBtn"><i class="fas fa-sync-alt"></i> Retry fetch</button>';
+          projectsContainer.appendChild(note);
+          document.getElementById('manualRetryBtn')?.addEventListener('click', () => fetchProjects(true));
+        } else {
+          const footer = document.createElement('p');
+          footer.style.cssText = 'grid-column:1/-1; text-align:center; color:var(--text-gray); margin-top:1rem; font-size:0.9rem;';
+          footer.innerText = `📁 ${repos.length} project${repos.length !== 1 ? 's' : ''} with live demos — fetched live from GitHub.`;
+          projectsContainer.appendChild(footer);
+        }
       }
 
-      function escapeHtml(text) {
-        if (!text) return '';
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
+      async function fetchProjects(forceRefresh = false) {
+        try {
+          projectsContainer.innerHTML = '<p style="text-align:center;">📡 Fetching latest projects from GitHub...</p>';
+          const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`);
+          if (!res.ok) {
+            if (res.status === 403 || res.status === 429) throw new Error('RATE_LIMIT');
+            throw new Error(`HTTP ${res.status}`);
+          }
+          const repos = await res.json();
+          const withHomepage = repos.filter(r => r.homepage && r.homepage.trim() && !r.archived);
+          if (withHomepage.length === 0) throw new Error('NO_PROJECTS');
+          // Cache data
+          localStorage.setItem(CACHE_KEY, JSON.stringify(withHomepage));
+          localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+          displayProjects(withHomepage, false);
+        } catch (err) {
+          const cachedRaw = localStorage.getItem(CACHE_KEY);
+          if (cachedRaw) {
+            const cachedRepos = JSON.parse(cachedRaw);
+            displayProjects(cachedRepos, true);
+          } else {
+            projectsContainer.innerHTML = `
+              <div style="text-align:center; padding:2rem; background:rgba(255,0,0,0.05); border-radius:20px;">
+                <i class="fas fa-exclamation-triangle" style="font-size:2rem; color:#ff5555;"></i>
+                <p style="margin:1rem 0;">GitHub API rate limit reached. Unable to load projects at the moment.</p>
+                <p>Please wait a few minutes or <a href="https://github.com/${GITHUB_USER}" target="_blank" style="color:var(--primary-green);">visit my GitHub directly</a> to see my work.</p>
+                <button class="retry-btn" id="rateLimitRetry"><i class="fas fa-redo-alt"></i> Try Again</button>
+              </div>
+            `;
+            document.getElementById('rateLimitRetry')?.addEventListener('click', () => fetchProjects(true));
+          }
+        }
       }
 
       fetchProjects();
-      setInterval(fetchProjects, 10*60*1000);
     })();
   </script>
   <script type="application/ld+json">
   { "@context": "https://schema.org", "@type": "Person", "name": "Loid Forger", "url": "https://loidforgerportfolio.netlify.app/", "jobTitle": "Full Stack Developer", "description": "5-star rated full-stack developer specializing in frontend, backend, and Web3 development. 50+ successful projects." }
   </script>
 </body>
-  </html>
+</html>
