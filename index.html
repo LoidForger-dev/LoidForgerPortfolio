@@ -382,7 +382,7 @@
       </div>
     </section>
 
-    <!-- NEW: Projects Button Section instead of grid -->
+    <!-- Projects Button Section (links to separate projects page) -->
     <section id="projects-section">
       <h2>My Work</h2>
       <div class="projects-btn-section">
@@ -394,7 +394,7 @@
       </div>
     </section>
 
-    <!-- NEW: Contact Me Section -->
+    <!-- Contact Me Section -->
     <section id="contact">
       <h2>📬 Let's Build Together</h2>
       <p style="text-align: center; margin-bottom: 1rem;">Got a project in mind? Fill out the form and I’ll get back to you within 24h.</p>
@@ -430,12 +430,14 @@
       <h2>Client Testimonials</h2>
       <div class="testimonials-container">
         <div class="testimonials-slider">
+          <!-- same testimonials as before -->
           <div class="testimonial-card"><div class="testimonial-text">"Working with Loid was one of the best decisions... he understood Web3 culture instantly."</div><div class="testimonial-author">TaxEvasionTuna</div><div class="testimonial-role">Core Team</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"We needed a site that felt serious but aligned with memecoin space. Loid delivered."</div><div class="testimonial-author">Dadacoin</div><div class="testimonial-role">Founder</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Optima-X required a modern presence. Loid built a site that communicates innovation."</div><div class="testimonial-author">Optima-X</div><div class="testimonial-role">Lead</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Speed matters in Web3, and Loid moves fast without sacrificing quality."</div><div class="testimonial-author">WaveCoin</div><div class="testimonial-role">Marketing</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Most developers don't understand meme energy. Loid does."</div><div class="testimonial-author">PumpCat</div><div class="testimonial-role">CM</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"SharedCoin needed clarity. Loid structured everything intuitively."</div><div class="testimonial-author">SharedCoin</div><div class="testimonial-role">Co-Founder</div></div>
+          <!-- duplicate for infinite scroll -->
           <div class="testimonial-card"><div class="testimonial-text">"Working with Loid was one of the best decisions... he understood Web3 culture instantly."</div><div class="testimonial-author">TaxEvasionTuna</div><div class="testimonial-role">Core Team</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"We needed a site that felt serious but aligned with memecoin space. Loid delivered."</div><div class="testimonial-author">Dadacoin</div><div class="testimonial-role">Founder</div></div>
           <div class="testimonial-card"><div class="testimonial-text">"Optima-X required a modern presence. Loid built a site that communicates innovation."</div><div class="testimonial-author">Optima-X</div><div class="testimonial-role">Lead</div></div>
@@ -499,7 +501,7 @@
         progress.style.width = (winScroll / height) * 100 + '%';
       });
 
-      // Contact form handler using FormSubmit (free email service)
+      // Contact form handler using FormSubmit
       const form = document.getElementById('projectForm');
       const statusDiv = document.getElementById('formStatus');
 
@@ -523,7 +525,6 @@
         }
 
         try {
-          // Using FormSubmit.co free endpoint to send email to IamMaverick4@gmail.com
           const response = await fetch('https://formsubmit.co/ajax/IamMaverick4@gmail.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
